@@ -1,7 +1,8 @@
 public class Partie {
 	
-	public void main (String[] args)
+	public static void main (String[] args)
 	{
 		Echiquier plateau = new Echiquier();
+		System.out.println(plateau);
 	}
 }
