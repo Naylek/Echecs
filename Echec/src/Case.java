@@ -4,6 +4,19 @@ public class Case {
 	private int colonne;
 	private Piece piece;
 	
+	public Case() {
+		
+	}
+	
+	public Case(int l, int c) {
+		this.ligne = l;
+		this.colonne = c;
+	}
+	
+	public Case(Piece p) {
+		this.piece = p;
+	}
+	
 	public int getLigne() {
 		return this.ligne;
 	}
@@ -28,5 +41,9 @@ public class Case {
 		this.piece = piece;
 	}
 	
-	
+	public String toString() {
+		String s;
+		s = "c";
+		return s;
+	}
 }
