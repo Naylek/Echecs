@@ -5,7 +5,7 @@ public class Case {
 	private Piece piece;
 	
 	public Case() {
-		
+		Piece a = new Pion();
 	}
 	
 	public Case(int l, int c) {
@@ -43,7 +43,7 @@ public class Case {
 	
 	public String toString() {
 		String s;
-		s = "c";
+		s = this.piece.toString();
 		return s;
 	}
 }
