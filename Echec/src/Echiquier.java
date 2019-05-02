@@ -24,9 +24,9 @@ public class Echiquier {
 	
 	public String toString() {
 		String s = null;
-		for(int i = 1 ; i <= 8 ; i++)
+		for(int i = 0 ; i <= 7 ; i++)
 		{
-			for(int j = 1 ; j <=8 ; j++)
+			for(int j = 0 ; j <= 7 ; j++)
 			{
 				s = s + this.plateau[i][j].toString();
 			}
