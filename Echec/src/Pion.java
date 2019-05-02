@@ -3,7 +3,7 @@ public class Pion extends Piece {
 	public Pion() {
 	}
 	
-	public Pion(String couleur, String nom) {
+	public Pion(String couleur) {
 		if(couleur == "noir")
 		{
 			this.couleur = couleur;

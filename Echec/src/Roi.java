@@ -3,7 +3,7 @@ public class Roi extends Piece{
 	public Roi() {
 	}
 	
-	public Roi(String couleur, String nom) {
+	public Roi(String couleur) {
 		if(couleur == "noir")
 		{
 			this.couleur = couleur;

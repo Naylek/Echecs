@@ -3,7 +3,7 @@ public class Tour extends Piece{
 	public Tour() {
 	}
 	
-	public Tour(String couleur, String nom) {
+	public Tour(String couleur) {
 		if(couleur == "noir")
 		{
 			this.couleur = couleur;
