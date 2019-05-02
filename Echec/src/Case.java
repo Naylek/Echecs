@@ -44,7 +44,14 @@ public class Case {
 	
 	public String toString() {
 		String s;
-		s = this.piece.toString();
+		if(this.piece == null) //si la case est vide
+		{
+			s = ". ";
+		}
+		else //si la case contient une piece
+		{
+			s = this.piece.toString() +" ";
+		}
 		return s;
 	}
 }

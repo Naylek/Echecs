@@ -3,7 +3,7 @@ public class Echiquier {
 	private Case[][] plateau;
 
 	public Echiquier() {
-		plateau = new Case[8][8];
+		this.plateau = new Case[8][8];
 		for(int i = 0 ; i <= 7 ; i++)
 		{
 			for(int j = 0 ; j <=7 ; j++)
@@ -80,14 +80,14 @@ public class Echiquier {
 				{
 					plateau[i][j] = new Case(new Tour("blanc"));
 				}
-				else plateau[i][j] = new Case(new Fou("blanc")); // j'arrive pas à mettre une case vide pour l'instant
+				else plateau[i][j] = new Case(); // j'arrive pas à mettre une case vide pour l'instant
 			}
 		}
 	}
 	
 	
-	public Case[][] getPlateau() {
-		return this.plateau;
+	public void getCase(int i, int j) {
+		System.out.println(this.plateau[i][j]);
 	}
 
 	public void setPlateau(Case[][] plateau) {
