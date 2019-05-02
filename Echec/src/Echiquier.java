@@ -8,7 +8,79 @@ public class Echiquier {
 		{
 			for(int j = 0 ; j <=7 ; j++)
 			{
-				plateau[i][j] = new Case();
+				if(i == 0 && j == 0)
+				{
+					plateau[i][j] = new Case(new Tour("noir"));
+				}
+				else if(i == 0 && j == 1)
+				{
+					plateau[i][j] = new Case(new Cavalier("noir"));
+				}
+				else if(i == 0 && j == 2)
+				{
+					plateau[i][j] = new Case(new Fou("noir"));
+				}
+				else if(i == 0 && j == 3)
+				{
+					plateau[i][j] = new Case(new Roi("noir"));
+				}
+				else if(i == 0 && j == 4)
+				{
+					plateau[i][j] = new Case(new Reine("noir"));
+				}
+				else if(i == 0 && j == 5)
+				{
+					plateau[i][j] = new Case(new Fou("noir"));
+				}
+				else if(i == 0 && j == 6)
+				{
+					plateau[i][j] = new Case(new Cavalier("noir"));
+				}
+				else if(i == 0 && j == 7)
+				{
+					plateau[i][j] = new Case(new Tour("noir"));
+				}
+				else if(i == 1) 
+				{
+					plateau[i][j] = new Case(new Pion("noir"));
+				}
+				else if(i == 6)
+				{
+					plateau[i][j] = new Case(new Pion("blanc"));
+				}
+				else if(i == 7 && j == 0)
+				{
+					plateau[i][j] = new Case(new Tour("blanc"));
+				}
+				else if(i == 7 && j == 1)
+				{
+					plateau[i][j] = new Case(new Cavalier("blanc"));
+				}
+				else if(i == 7 && j == 2)
+				{
+					plateau[i][j] = new Case(new Fou("blanc"));
+				}
+				else if(i == 7 && j == 3)
+				{
+					plateau[i][j] = new Case(new Roi("blanc"));
+				}
+				else if(i == 7 && j == 4)
+				{
+					plateau[i][j] = new Case(new Reine("blanc"));
+				}
+				else if(i == 7 && j == 5)
+				{
+					plateau[i][j] = new Case(new Fou("blanc"));
+				}
+				else if(i == 7 && j == 6)
+				{
+					plateau[i][j] = new Case(new Cavalier("blanc"));
+				}
+				else if(i == 7 && j == 7)
+				{
+					plateau[i][j] = new Case(new Tour("blanc"));
+				}
+				else plateau[i][j] = new Case(new Fou("blanc")); // j'arrive pas à mettre une case vide pour l'instant
 			}
 		}
 	}

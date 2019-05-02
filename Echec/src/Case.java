@@ -5,12 +5,13 @@ public class Case {
 	private Piece piece;
 	
 	public Case() {
-		this.piece = new Pion();
+		
 	}
 	
-	public Case(int l, int c) {
+	public Case(int l, int c, Piece p) {
 		this.ligne = l;
 		this.colonne = c;
+		this.piece = p;
 	}
 	
 	public Case(Piece p) {
