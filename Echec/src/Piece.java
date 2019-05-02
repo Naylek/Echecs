@@ -25,8 +25,6 @@ public abstract class Piece {
 	}
 	
 	public String toString() {
-		String s;
-		s = this.nom;
-		return s;
+		return this.nom;
 	}
 }

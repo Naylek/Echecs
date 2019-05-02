@@ -5,7 +5,7 @@ public class Case {
 	private Piece piece;
 	
 	public Case() {
-		Piece a = new Pion();
+		this.piece = new Pion();
 	}
 	
 	public Case(int l, int c) {
