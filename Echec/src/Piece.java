@@ -1,7 +1,7 @@
 public abstract class Piece {
 	
-	private String couleur;
-	private String nom;
+	protected String couleur;
+	protected String nom;
 	
 	public String getCouleur() {
 		return this.couleur;
@@ -25,6 +25,8 @@ public abstract class Piece {
 	}
 	
 	public String toString() {
-		return "oui";
+		String s;
+		s = this.nom;
+		return s;
 	}
 }
