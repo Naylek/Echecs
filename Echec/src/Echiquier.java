@@ -101,7 +101,7 @@ public class Echiquier {
 				{
 					plateau[i][j] = new Case(new Tour("blanc"));
 				}
-				else plateau[i][j] = new Case(); // j'arrive pas à mettre une case vide pour l'instant
+				else plateau[i][j] = new Case();
 			}
 		}
 	}
