@@ -107,7 +107,7 @@ public class Echiquier {
 	}
 	
 	
-	public void getCase(int i, int j) {
+	public void getCasePlateau(int i, int j) {
 		System.out.println(this.plateau[i][j]);
 	}
 
