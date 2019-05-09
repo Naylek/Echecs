@@ -101,13 +101,13 @@ public class Echiquier {
 				{
 					plateau[i][j] = new Case(new Tour("blanc"));
 				}
-				else plateau[i][j] = new Case(); // j'arrive pas à mettre une case vide pour l'instant
+				else plateau[i][j] = new Case();
 			}
 		}
 	}
 	
 	
-	public void getCase(int i, int j) {
+	public void getCasePlateau(int i, int j) {
 		System.out.println(this.plateau[i][j]);
 	}
 
