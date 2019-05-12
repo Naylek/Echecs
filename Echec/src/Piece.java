@@ -24,6 +24,8 @@ public abstract class Piece {
 		
 	}
 	
+	public abstract boolean deplacementValide();
+	
 	public String toString() {
 		return this.nom;
 	}
