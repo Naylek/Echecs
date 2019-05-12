@@ -4,14 +4,13 @@ public class Tour extends Piece{
 	}
 	
 	public Tour(String couleur) {
+		this.couleur = couleur;
 		if(couleur == "noir")
 		{
-			this.couleur = couleur;
 			this.nom = "\u265c";
 		}
 		if(couleur == "blanc")
 		{
-			this.couleur = couleur;
 			this.nom = "\u2656";
 		}
 	}
