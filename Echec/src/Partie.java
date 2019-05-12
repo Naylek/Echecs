@@ -6,6 +6,6 @@ public class Partie {
 		System.out.println(plateau);
 		Case c;
 		c = plateau.getCase(0, 0);
-		System.out.println(c.getPiece().couleur);
+		//System.out.println(c.getPiece().couleur);
 	}
 }

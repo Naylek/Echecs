@@ -122,15 +122,22 @@ public class Echiquier {
 	
 	public String toString() {
 		String s = "";
-		char c = 'A';
+		char l = '8';
+		char c = 'a';
 		for(int i = 0 ; i <= 7 ; i++)
 		{
-			s = s + c + "| ";
+			s = s + l + "  ";
 			for(int j = 0 ; j <= 7 ; j++)
 			{
 				s = s + this.plateau[i][j].toString();
 			}
 			s = s + "\n";
+			l--;
+		}
+		s = s + "   ";
+		for(int m = 0 ; m < 8 ; m++)
+		{
+			s = s + c + " ";
 			c++;
 		}
 		return s;		

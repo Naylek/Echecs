@@ -64,7 +64,7 @@ public class Case {
 		}
 		else //si la case contient une piece
 		{
-			s = this.piece.toString() +" ";
+			s = this.piece.toString() + " ";
 		}
 		return s;
 	}
