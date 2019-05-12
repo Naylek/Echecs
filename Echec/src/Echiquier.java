@@ -107,8 +107,13 @@ public class Echiquier {
 	}
 	
 	
-	public void getCasePlateau(int i, int j) {
+	public void afficheCasePlateau(int i, int j) {
 		System.out.println(this.plateau[i][j]);
+	}
+	
+	public Case getCase(int i, int j)
+	{
+		return(this.plateau[i][j]);
 	}
 
 	public void setPlateau(Case[][] plateau) {
@@ -117,13 +122,16 @@ public class Echiquier {
 	
 	public String toString() {
 		String s = "";
+		char c = 'A';
 		for(int i = 0 ; i <= 7 ; i++)
 		{
+			s = s + c + "| ";
 			for(int j = 0 ; j <= 7 ; j++)
 			{
 				s = s + this.plateau[i][j].toString();
 			}
 			s = s + "\n";
+			c++;
 		}
 		return s;		
 	}
