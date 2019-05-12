@@ -8,6 +8,8 @@ public class Partie {
 		Tour t = new Tour("noir");
 		plateau.setCase(2, 7, t);
 		System.out.println(plateau);
+		Joueur j1 = new Joueur();
+		j1.choixDeplacement(plateau);
 		
 		
 	}
