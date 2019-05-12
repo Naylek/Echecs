@@ -9,12 +9,13 @@ public class Joueur {
 	public boolean choixValide(String choix) // verifie si le choix est conforme par rapport aux lettres et chiffres
 	{
 		choix = choix.toUpperCase(); // met la saisie de l'utilisateur en MAJUSCULE
-		if(choix.length() > 2 && choix.length() < 2) // verifie que l'utilisateur n'a pas mis plus de 2 caractere à la saisie
+		if(choix.length() == 2) // verifie que l'utilisateur n'a pas mis plus de 2 caractere à la saisie
 		{
-			return false;
+			return((choix.charAt(0) >= 'A' && choix.charAt(0) <= 'H') && (choix.charAt(1) >= '0' && choix.charAt(1) <= '7'));
+			//verifie si la saisie est entre [A-H] (premier caractere) et [1-7] (deuxieme caractere)
 		}
-		return((choix.charAt(0) >= 'A' && choix.charAt(0) <= 'H') && (choix.charAt(1) >= '0' && choix.charAt(1) <= '7'));
-	}//verifie si la saisie est entre [A-H] (premier caractere) et [1-7] (deuxieme caractere)
+		else return false;		
+	}
 	
 	public boolean saisieControle(Echiquier echec)
 	{
