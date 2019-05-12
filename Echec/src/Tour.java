@@ -15,4 +15,8 @@ public class Tour extends Piece{
 			this.nom = "\u2656";
 		}
 	}
+	
+	public boolean deplacementValide() {
+		return false;
+	}
 }

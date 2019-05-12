@@ -15,4 +15,8 @@ public class Reine extends Piece{
 			this.nom = "\u2655";
 		}
 	}
+	
+	public boolean deplacementValide() {
+		return false;
+	}
 }

@@ -15,4 +15,8 @@ public class Fou extends Piece {
 			this.nom = "\u2657";
 		}
 	}
+	
+	public boolean deplacementValide() {
+		return false;
+	}
 }

@@ -15,4 +15,8 @@ public class Pion extends Piece {
 			this.nom = "\u2659";
 		}
 	}
+	
+	public boolean deplacementValide() {
+		return false;
+	}
 }

@@ -15,4 +15,8 @@ public class Cavalier extends Piece {
 			this.nom = "\u2658";
 		}
 	}
+	
+	public boolean deplacementValide() {
+		return false;
+	}
 }

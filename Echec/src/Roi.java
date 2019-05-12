@@ -15,4 +15,8 @@ public class Roi extends Piece{
 			this.nom = "\u2654";
 		}
 	}
+	
+	public boolean deplacementValide() {
+		return false;
+	}
 }
