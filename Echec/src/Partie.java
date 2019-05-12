@@ -4,6 +4,8 @@ public class Partie {
 	{
 		Echiquier plateau = new Echiquier();
 		System.out.println(plateau);
-		//plateau.getCase(3,1);
+		Case c;
+		c = plateau.getCase(0, 0);
+		System.out.println(c.getPiece().couleur);
 	}
 }
