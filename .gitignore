@@ -54,3 +54,12 @@ hs_err_pid*
 .recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/_2.tis
 .recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/segments_3
 Echec/src/Cavalier.java
+*.fdt
+.recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/_3.fdx
+*.fnm
+*.nrm
+*.frq
+*.tii
+*.prx
+*.tis
+.recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/segments_4
