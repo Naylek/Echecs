@@ -123,22 +123,28 @@ public class Echiquier {
 	public String toString() {
 		String s = "";
 		char l = '8';
-		char c = 'a';
-		for(int i = 0 ; i <= 7 ; i++)
+		char c = 'A';
+		for(int i = 0 ; i <= 8 ; i++)
 		{
-			s = s + l + "  ";
-			for(int j = 0 ; j <= 7 ; j++)
+			if(i <= 7)
 			{
-				s = s + this.plateau[i][j].toString();
+				s = s + l + "  "; // afficher les chiffres de plateau
+				for(int j = 0 ; j <= 7 ; j++) // afficher le contenu du plateau
+				{
+					s = s + this.plateau[i][j].toString();
+				}
+				s = s + "\n";
+				l--; // decremente le code ascii pour les chiffres
 			}
-			s = s + "\n";
-			l--;
-		}
-		s = s + "   ";
-		for(int m = 0 ; m < 8 ; m++)
-		{
-			s = s + c + " ";
-			c++;
+			if(i == 8) // derniere ligne pour afficher les lettres du plateau
+			{
+				s = s + "   "; 
+				for(int k = 0 ; k < 8 ; k++)
+				{
+					s = s + c + " ";
+					c++;
+				}
+			}
 		}
 		return s;		
 	}
