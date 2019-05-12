@@ -127,7 +127,7 @@ public class Echiquier {
 	
 	public String toString() {
 		String s = "";
-		char l = '7';
+		char l = '0';
 		char c = 'A';
 		for(int i = 0 ; i <= 8 ; i++)
 		{
@@ -139,7 +139,7 @@ public class Echiquier {
 					s = s + this.plateau[i][j].toString();
 				}
 				s = s + "\n";
-				l--; // decremente le code ascii pour les chiffres
+				l++; // incremente le code ascii pour les chiffres
 			}
 			if(i == 8) // derniere ligne pour afficher les lettres du plateau
 			{
