@@ -42,6 +42,20 @@ public class Case {
 		this.piece = piece;
 	}
 	
+	public boolean caseOccupe()
+	{
+		return (this.piece != null);
+	}
+	
+	public boolean caseOccupe(String couleur)
+	{
+		if(this.piece == null)
+		{
+			return false;
+		}
+		else return (this.piece.couleur.equals(couleur));
+	}
+	
 	public String toString() {
 		String s;
 		if(this.piece == null) //si la case est vide
