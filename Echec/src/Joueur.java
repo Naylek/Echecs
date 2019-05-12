@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Joueur {
-	blabla de Kelyan;
 	
 	public void choixDeplacement(Echiquier echec)
 	{
