@@ -4,14 +4,13 @@ public class Fou extends Piece {
 	}
 	
 	public Fou(String couleur) {
+		this.couleur = couleur;
 		if(couleur == "noir")
 		{
-			this.couleur = couleur;
 			this.nom = "\u265d";
 		}
 		if(couleur == "blanc")
 		{
-			this.couleur = couleur;
 			this.nom = "\u2657";
 		}
 	}
