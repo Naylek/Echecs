@@ -115,6 +115,11 @@ public class Echiquier {
 	{
 		return(this.plateau[i][j]);
 	}
+	
+	public void setCase(int i, int j, Piece p)
+	{
+		this.plateau[i][j] = new Case(p);
+	}
 
 	public void setPlateau(Case[][] plateau) {
 		this.plateau = plateau;
@@ -122,7 +127,7 @@ public class Echiquier {
 	
 	public String toString() {
 		String s = "";
-		char l = '8';
+		char l = '7';
 		char c = 'A';
 		for(int i = 0 ; i <= 8 ; i++)
 		{
