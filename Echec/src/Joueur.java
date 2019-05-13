@@ -63,7 +63,12 @@ public class Joueur {
 		depart = this.saisieControle(echec).toUpperCase(); // on remet en majuscule car sinon ça revient en miniscule
 		//System.out.println("Veuillez choisir la case que vous voulez\n");
 		//arrive = this.saisieControle(echec).toUpperCase();
-		System.out.println(this.getChoix(depart, echec));
+//		if(this.getChoix(depart, echec).caseOccupe() == true) // si case occupe donc si ya une piece dedans
+//		{
+//			System.out.println(this.getChoix(depart, echec).getPiece().getClass().getTypeName()); //pour avoir le nom de la class
+//		}
+//		else System.out.println("."); // si pas piece donc case vide
+		
 	}
 		
 		
