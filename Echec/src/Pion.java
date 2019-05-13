@@ -15,19 +15,20 @@ public class Pion extends Piece {
 		}
 	}
 	
-	public boolean deplacementValide(Echiquier echec,int x, int y) 
+	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive)
 	{
-		if (this.couleur == "blanc")
+		if (/*caseDevantLibre*/)
 		{
-			
+			if (/*1erTourPion && 2CasesDevantLibres*/)
+			{
+				return true;
+			}
 		}
 		else
 		{
-			
+			return false;
 		}
-		
-		return false;
 	}
 	
-	//public seDeplacer()
+	public void seDeplacer() {}
 }

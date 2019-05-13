@@ -15,7 +15,7 @@ public class Fou extends Piece {
 		}
 	}
 	
-	public boolean deplacementValide(Echiquier echec,int x, int y) 
+	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive)
 	{
 		return false;
 	}

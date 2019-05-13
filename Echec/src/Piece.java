@@ -24,7 +24,7 @@ public abstract class Piece {
 		
 	}
 	
-	public abstract boolean deplacementValide(Echiquier e, int x, int y);
+	public abstract boolean deplacementValide(Echiquier e, Case x, Case y);
 	
 	public String toString() {
 		return this.nom;
