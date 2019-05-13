@@ -17,33 +17,35 @@ public class Joueur {
 		else return false;		
 	}
 	
-	public boolean saisieControle(Echiquier echec)
+	public String saisieControle(Echiquier echec)
 	{
-		String arrive; // la case où le joueur veut deplacer la piece
-		String depart; // le choix de la piece qu'il veut deplacer
+		String deplac; // le choix de la piece qu'il veut deplacer
 		Scanner choix = new Scanner(System.in);
-		System.out.println("Veuillez choisir la pièce que vous voulez déplacer (exemple : A6)\n");
-		depart = choix.nextLine();
+		deplac = choix.nextLine();	
 		
-		while(choixValide(depart) == false) // il resaisie jusqu'a que la saisie soit correcte
+		while(choixValide(deplac) == false) // il resaisie jusqu'a que la saisie soit correcte
 		{
 			System.out.println(echec);
-			System.out.println("Choix non conforme ! Veuillez choisir la pièce que vous voulez déplacer (exemple : [A-H][1-7]) : ");
-			depart = choix.nextLine();
+			System.out.println("Choix non conforme ! Veuillez choisir entre -> [A-H][1-7] : ");
+			deplac = choix.nextLine();
 		}
-		return(choixValide(depart));
+		return deplac;
 	}
 	
 	public void choixDeplacement(Echiquier echec)
 	{
-		if(saisieControle(echec) == true)
-		{
-			System.out.println("bon");
-		}
-		else System.out.println("pas bon");
-		
-		
-		
-		
+		String depart;
+		String arrive;
+		System.out.println("Veuillez choisir la pièce que vous voulez déplacer (exemple : A6)\n");
+		depart = this.saisieControle(echec);
+		System.out.println("Veuillez choisir la case que vous voulez\n");
+		arrive = this.saisieControle(echec);
+		System.out.println(depart);
+		System.out.println(arrive);
 	}
+		
+		
+		
+		
+		
 }
