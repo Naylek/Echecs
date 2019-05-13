@@ -29,40 +29,66 @@ public class Joueur {
 			System.out.println("Choix non conforme ! Veuillez choisir entre -> [A-H][1-7] : ");
 			deplac = choix.nextLine();
 		}
-		return deplac;
+		return deplac.toUpperCase(); // en met en majuscule ici comme ça les autres fonctions reprennent à partir de là
 	}
 	
-	public Case getChoix(String choix, Echiquier echec)// retourn la case choisie selon la saisie de l'utilisateur
+	public int getColonneSaisie(String choix) // retourne l'indice colonne par rapport au 1er caractere saisie de String choix
 	{
-		char c = 'A'; // quand on increment on a la prochaine lettre
-		char l = '0'; // pareille prochain chiffre
-		for(int i = 0 ; i <= 7 ; i++) 
+		char c ='A'; // quand on increment on a la prochaine lettre
+		for(int i = 0 ; i <= 7 ; i++)
 		{
-			if(choix.charAt(0) == c) // verifie si le premier caractere est egale à char c sinon on increment char c 
+			if(choix.charAt(0) == c) // verifie si le premier caractere est egale à char c sinon on increment char c
 			{
-				for(int j = 0 ; j <= 7 ; j++) // si sa rentre dedans c'est quand on a trouvé l'indice de la premiere lettre dans l'éechiquier
-				{
-					if(choix.charAt(1) == l) // meme chose pour le deuxieme caractere
-					{
-						return echec.getCase(j, i); // l'indice j -> les lettre (ligne) | l'indiece i -> pour les chiffres (colonne)
-					}
-					l++; // '0' = '0' + '1' = '1' etc
-				}
+				return i; //retourne l'indice dans le plateau (conversion de la saisie au coordonnée)
 			}
 			c++; // pour regarder la prochaine lettre 'A' = 'A' + 1 = 'B' etc
 		}
-		return null; // vu que la saisie est verifié avant ça ne retournera jamais null
-		
+		return 0; // vu que la saisie est verifié avant ça ne retournera jamais 0
+	}
+	
+	public int getLigneSaisie(String choix) // retourne l'indice ligne par rapport au 2eme caractere saisie de String choix
+	{
+		char l ='0'; // quand on increment on a le prochaine chiffre
+		for(int j = 0 ; j <= 7 ; j++)
+		{
+			if(choix.charAt(1) == l) // verifie si le premier caractere est egale à char l sinon on incremente char l
+			{
+				return j; //retourne l'indice dans le plateau (conversion de la saisie au coordonnée)
+			}
+			l++; // '0' = '0' + '1' = '1' etc
+		}
+		return 0; // vu que la saisie est verifié avant ça ne retournera jamais null
+	}
+	
+	public void setLigneSaisie(String choix, Echiquier echec)
+	{
+		int ligne;
+		ligne = this.getLigneSaisie(choix);
+		this.getChoix(choix, echec).setLigne(ligne); //initialise la ligne de la case par rapport à l'echiquier
+	}
+	
+	public void setColonneSaisie(String choix, Echiquier echec)
+	{
+		int colonne;
+		colonne = this.getColonneSaisie(choix);
+		getChoix(choix, echec).setColonne(colonne); //initialise la colonne de la case par rapport à l'echiquier
+	}
+	
+	public Case getChoix(String choix, Echiquier echec)// retourne la case choisie selon la saisie de l'utilisateur
+	{
+		int colonne = this.getColonneSaisie(choix); // lettre convertie en colonne
+		int ligne = this.getLigneSaisie(choix); // chiffre converti en ligne
+		return echec.getCase(ligne,colonne); // l'indice j -> les lettre (colonne) | l'indice i -> pour les chiffres (ligne)
 	}
 	
 	public String choixPiece(Echiquier echec) // verifie si que le 1er choix est bien une piece
 	{
 		String depart;
-		depart = this.saisieControle(echec).toUpperCase();// on remet en majuscule car sinon ça revient en miniscule
+		depart = this.saisieControle(echec);
 		while(this.getChoix(depart, echec).caseOccupe() == false) // tant que le choix n'est pas une piece il resaisit
 		{
 			System.out.println("Choix non conforme ! La case choisie n'est pas une pièce : ");
-			depart = this.saisieControle(echec).toUpperCase();
+			depart = this.saisieControle(echec);
 		}
 		return depart;
 	}
@@ -70,11 +96,11 @@ public class Joueur {
 	public String memeChoix(Echiquier echec, String depart)
 	{
 		String arrive;
-		arrive = this.saisieControle(echec).toUpperCase();
+		arrive = this.saisieControle(echec);
 		while(arrive.equals(depart)) // tant que le choix est le meme que le 1er choix il resaisit
 		{
 			System.out.println("Choix non conforme ! Vous ne pouvez pas choisir la même case : ");
-			arrive = this.saisieControle(echec).toUpperCase();
+			arrive = this.saisieControle(echec);
 		}
 		return arrive;
 	}
@@ -83,19 +109,19 @@ public class Joueur {
 	{
 		String depart;
 		String arrive;
+		int colonne = 0;
+		int ligne = 0;
 		System.out.println("Veuillez choisir la pièce que vous voulez déplacer (exemple : A6)\n"); // 1er choix une piece
 		depart = choixPiece(echec); // verifie 1er choix est une piece
-		//System.out.println(getChoix(depart, echec)); // montre la piece choisie par l'utilisateur
+		//System.out.println(getChoix(depart, echec) + " -> 1er avec conversion"); // juste pour afficher la case choisie
+		this.setColonneSaisie(depart, echec); //setColonne par rapport à la saisie
+		this.setLigneSaisie(depart, echec); // setLigne par rapport à la saisie
 		
 		System.out.println("Veuillez choisir la case que vous voulez\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
 		arrive = memeChoix(echec,depart); // verifie si 2eme choix pas egale au premier choix (pas de mouvement surplace)
-<<<<<<< HEAD
 		this.setColonneSaisie(arrive, echec);
 		this.setLigneSaisie(arrive, echec);
 		//getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec);
-=======
-		//System.out.println(getChoix(arrive, echec)); montre la case choisie pour le deplacement		
->>>>>>> parent of 16d2cfb... bcp de mofif voir commentaire JOUEUR
 	}
 		
 		
