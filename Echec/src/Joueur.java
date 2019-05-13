@@ -89,7 +89,7 @@ public class Joueur {
 		
 		System.out.println("Veuillez choisir la case que vous voulez\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
 		arrive = memeChoix(echec,depart); // verifie si 2eme choix pas egale au premier choix (pas de mouvement surplace)
-		//System.out.println(getChoix(arrive, echec)); montre la case choisie pour le deplacement		
+		//System.out.println(getChoix(arrive, echec)); //montre la case choisie pour le deplacement		
 	}
 		
 		
