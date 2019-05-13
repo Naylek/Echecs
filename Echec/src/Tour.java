@@ -15,7 +15,13 @@ public class Tour extends Piece{
 		}
 	}
 	
-	public boolean deplacementValide() {
+	public boolean deplacementValide(Echiquier echec,int x, int y) 
+	{
 		return false;
+	}
+	
+	public void seDeplacer()
+	{
+		
 	}
 }
