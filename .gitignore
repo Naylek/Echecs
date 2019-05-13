@@ -63,3 +63,5 @@ Echec/src/Cavalier.java
 *.prx
 *.tis
 .recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/segments_4
+*.fdx
+.recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/segments_5
