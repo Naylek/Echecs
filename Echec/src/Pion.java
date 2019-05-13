@@ -15,8 +15,20 @@ public class Pion extends Piece {
 		}
 	}
 	
-	public boolean deplacementValide(Echiquier echec,int x, int y) 
+	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive)
 	{
-		return false;
+		if (/*caseDevantLibre*/)
+		{
+			if (/*1erTourPion && 2CasesDevantLibres*/)
+			{
+				return true;
+			}
+		}
+		else
+		{
+			return false;
+		}
 	}
+	
+	public void seDeplacer() {}
 }
