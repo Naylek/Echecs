@@ -17,6 +17,17 @@ public class Pion extends Piece {
 	
 	public boolean deplacementValide(Echiquier echec,int x, int y) 
 	{
+		if (this.couleur == "blanc")
+		{
+			
+		}
+		else
+		{
+			
+		}
+		
 		return false;
 	}
+	
+	//public seDeplacer()
 }

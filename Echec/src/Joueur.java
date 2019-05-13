@@ -35,16 +35,16 @@ public class Joueur {
 	public Case getChoix(String choix, Echiquier echec)// retourn la case choisie selon la saisie de l'utilisateur
 	{
 		char c = 'A'; // quand on increment on a la prochaine lettre
-		char l = '0'; // pareille prochain chiffre
+		char l = '0'; // pareil prochain chiffre
 		for(int i = 0 ; i <= 7 ; i++) 
 		{
 			if(choix.charAt(0) == c) // verifie si le premier caractere est egale à char c sinon on increment char c 
 			{
-				for(int j = 0 ; j <= 7 ; j++) // si sa rentre dedans c'est quand on a trouvé l'indice de la premiere lettre dans l'éechiquier
+				for(int j = 0 ; j <= 7 ; j++) // si ça rentre dedans c'est qu'on a trouvé l'indice de la premiere lettre dans l'échiquier
 				{
 					if(choix.charAt(1) == l) // meme chose pour le deuxieme caractere
 					{
-						return echec.getCase(j, i); // l'indice j -> les lettre (ligne) | l'indiece i -> pour les chiffres (colonne)
+						return echec.getCase(j, i); // l'indice j -> les lettre (ligne) | l'indice i -> pour les chiffres (colonne)
 					}
 					l++; // '0' = '0' + '1' = '1' etc
 				}
