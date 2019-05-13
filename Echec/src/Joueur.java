@@ -61,13 +61,21 @@ public class Joueur {
 		String arrive;
 		System.out.println("Veuillez choisir la pièce que vous voulez déplacer (exemple : A6)\n");
 		depart = this.saisieControle(echec).toUpperCase(); // on remet en majuscule car sinon ça revient en miniscule
-		//System.out.println("Veuillez choisir la case que vous voulez\n");
-		//arrive = this.saisieControle(echec).toUpperCase();
-//		if(this.getChoix(depart, echec).caseOccupe() == true) // si case occupe donc si ya une piece dedans
-//		{
-//			System.out.println(this.getChoix(depart, echec).getPiece().getClass().getTypeName()); //pour avoir le nom de la class
-//		}
-//		else System.out.println("."); // si pas piece donc case vide
+		while(this.getChoix(depart, echec).caseOccupe() == false) // si case occupe donc si ya une piece dedans
+		{
+			System.out.println("Choix non conforme ! La case choisie n'est pas une pièce : ");
+			depart = this.saisieControle(echec).toUpperCase();
+		}
+		System.out.println(getChoix(depart, echec));
+		System.out.println("Veuillez choisir la case que vous voulez\n");
+		arrive = this.saisieControle(echec).toUpperCase();
+		while(arrive.equals(depart))
+		{
+			System.out.println("Choix non conforme ! Vous ne pouvez pas choisir la même case : ");
+			arrive = this.saisieControle(echec).toUpperCase();
+		}
+		System.out.println(getChoix(arrive, echec));
+		//System.out.println(this.getChoix(depart, echec).getPiece().getClass().getTypeName()); //pour avoir le nom de la class
 		
 	}
 		
