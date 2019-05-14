@@ -19,4 +19,8 @@ public class Fou extends Piece {
 	{
 		return false;
 	}
+	
+	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
+		return echec;
+	}
 }

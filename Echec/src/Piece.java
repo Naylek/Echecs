@@ -20,9 +20,7 @@ public abstract class Piece {
 	}
 	
 	//method abstract
-	public void seDeplacer() {
-		
-	}
+	public abstract Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive);
 	
 	public abstract boolean deplacementValide(Echiquier e, Case x, Case y);
 	

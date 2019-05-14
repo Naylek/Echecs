@@ -20,8 +20,7 @@ public class Tour extends Piece{
 		return false;
 	}
 	
-	public void seDeplacer()
-	{
-		
+	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
+		return echec;
 	}
 }

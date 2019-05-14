@@ -74,5 +74,7 @@ public class Pion extends Piece {
 		else return false;
 	}
 	
-	public void seDeplacer() {}
+	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
+		return echec;
+	}
 }
