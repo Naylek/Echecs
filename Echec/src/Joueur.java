@@ -71,7 +71,7 @@ public class Joueur {
 	{
 		int colonne;
 		colonne = this.getColonneSaisie(choix);
-		getChoix(choix, echec).setColonne(colonne); //initialise la colonne de la case par rapport à l'echiquier
+		this.getChoix(choix, echec).setColonne(colonne); //initialise la colonne de la case par rapport à l'echiquier
 	}
 	
 	public Case getChoix(String choix, Echiquier echec)// retourne la case choisie selon la saisie de l'utilisateur
@@ -121,7 +121,7 @@ public class Joueur {
 		arrive = memeChoix(echec,depart); // verifie si 2eme choix pas egale au premier choix (pas de mouvement surplace)
 		this.setColonneSaisie(arrive, echec);
 		this.setLigneSaisie(arrive, echec);
-		//getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec);
+		//getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec));
 	}
 		
 		
