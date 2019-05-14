@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class Joueur {
-	
+
 	public Joueur() {
-		
+
 	}
-	
+
 	public boolean choixValide(String choix) // verifie si le choix est conforme par rapport aux lettres et chiffres
 	{
 		choix = choix.toUpperCase(); // met la saisie de l'utilisateur en MAJUSCULE
@@ -14,15 +14,15 @@ public class Joueur {
 			return((choix.charAt(0) >= 'A' && choix.charAt(0) <= 'H') && (choix.charAt(1) >= '0' && choix.charAt(1) <= '7'));
 			//verifie si la saisie est entre [A-H] (premier caractere) et [1-7] (deuxieme caractere)
 		}
-		else return false;		
+		else return false;
 	}
-	
+
 	public String saisieControle(Echiquier echec)
 	{
 		String deplac; // le choix de la case selon l'affichage sur le terminale
 		Scanner choix = new Scanner(System.in);
-		deplac = choix.nextLine();	
-		
+		deplac = choix.nextLine();
+
 		while(choixValide(deplac) == false) // il resaisie jusqu'a que la saisie soit correcte
 		{
 			System.out.println(echec);
@@ -31,7 +31,7 @@ public class Joueur {
 		}
 		return deplac.toUpperCase(); // en met en majuscule ici comme ça les autres fonctions reprennent à partir de là
 	}
-	
+
 	public int getColonneSaisie(String choix) // retourne l'indice colonne par rapport au 1er caractere saisie de String choix
 	{
 		char c ='A'; // quand on increment on a la prochaine lettre
@@ -45,7 +45,7 @@ public class Joueur {
 		}
 		return 0; // vu que la saisie est verifié avant ça ne retournera jamais 0
 	}
-	
+
 	public int getLigneSaisie(String choix) // retourne l'indice ligne par rapport au 2eme caractere saisie de String choix
 	{
 		char l ='0'; // quand on increment on a le prochaine chiffre
@@ -59,28 +59,28 @@ public class Joueur {
 		}
 		return 0; // vu que la saisie est verifié avant ça ne retournera jamais null
 	}
-	
+
 	public void setLigneSaisie(String choix, Echiquier echec)
 	{
 		int ligne;
 		ligne = this.getLigneSaisie(choix);
 		this.getChoix(choix, echec).setLigne(ligne); //initialise la ligne de la case par rapport à l'echiquier
 	}
-	
+
 	public void setColonneSaisie(String choix, Echiquier echec)
 	{
 		int colonne;
 		colonne = this.getColonneSaisie(choix);
-		getChoix(choix, echec).setColonne(colonne); //initialise la colonne de la case par rapport à l'echiquier
+		this.getChoix(choix, echec).setColonne(colonne); //initialise la colonne de la case par rapport à l'echiquier
 	}
-	
+
 	public Case getChoix(String choix, Echiquier echec)// retourne la case choisie selon la saisie de l'utilisateur
 	{
 		int colonne = this.getColonneSaisie(choix); // lettre convertie en colonne
 		int ligne = this.getLigneSaisie(choix); // chiffre converti en ligne
 		return echec.getCase(ligne,colonne); // l'indice j -> les lettre (colonne) | l'indice i -> pour les chiffres (ligne)
 	}
-	
+
 	public String choixPiece(Echiquier echec) // verifie si que le 1er choix est bien une piece
 	{
 		String depart;
@@ -92,7 +92,7 @@ public class Joueur {
 		}
 		return depart;
 	}
-	
+
 	public String memeChoix(Echiquier echec, String depart)
 	{
 		String arrive;
@@ -104,7 +104,7 @@ public class Joueur {
 		}
 		return arrive;
 	}
-	
+
 	public void choixDeplacement(Echiquier echec)
 	{
 		String depart;
@@ -116,16 +116,18 @@ public class Joueur {
 		//System.out.println(getChoix(depart, echec) + " -> 1er avec conversion"); // juste pour afficher la case choisie
 		this.setColonneSaisie(depart, echec); //setColonne par rapport à la saisie
 		this.setLigneSaisie(depart, echec); // setLigne par rapport à la saisie
-		
+
 		System.out.println("Veuillez choisir la case que vous voulez\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
 		arrive = memeChoix(echec,depart); // verifie si 2eme choix pas egale au premier choix (pas de mouvement surplace)
 		this.setColonneSaisie(arrive, echec);
 		this.setLigneSaisie(arrive, echec);
-		//if(getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec))
+
+		//getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec));
+		//if(getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec));
 	}
-		
-		
-		
-		
-		
+
+
+
+
+
 }
