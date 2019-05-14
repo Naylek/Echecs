@@ -4,7 +4,7 @@ public class Pion extends Piece {
 	}
 	
 	public Pion(String couleur) {
-		this.couleur = couleur;
+		super(couleur);
 		if(couleur == "noir")
 		{
 			this.nom = "\u265f";

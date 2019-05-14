@@ -3,6 +3,20 @@ public abstract class Piece {
 	protected String couleur;
 	protected String nom;
 	
+	public Piece() {
+		
+	}
+	
+	public Piece(Piece p) {
+		this.couleur = p .couleur;
+		this.nom = p.nom;
+	}
+	
+	public Piece(String couleur)
+	{
+		this.couleur = couleur;
+	}
+	
 	public String getCouleur() {
 		return this.couleur;
 	}

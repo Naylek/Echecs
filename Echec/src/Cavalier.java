@@ -4,7 +4,7 @@ public class Cavalier extends Piece {
 	}
 	
 	public Cavalier(String couleur) {
-		this.couleur = couleur;
+		super(couleur);
 		if(couleur == "noir")
 		{
 			this.nom = "\u265e";

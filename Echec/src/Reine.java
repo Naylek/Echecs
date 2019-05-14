@@ -4,7 +4,7 @@ public class Reine extends Piece{
 	}
 	
 	public Reine(String couleur) {
-		this.couleur = couleur;
+		super(couleur);
 		if(couleur == "noir")
 		{
 			this.nom = "\u265b";

@@ -4,7 +4,7 @@ public class Tour extends Piece{
 	}
 	
 	public Tour(String couleur) {
-		this.couleur = couleur;
+		super(couleur);
 		if(couleur == "noir")
 		{
 			this.nom = "\u265c";

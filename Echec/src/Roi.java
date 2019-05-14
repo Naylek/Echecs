@@ -4,7 +4,7 @@ public class Roi extends Piece{
 	}
 	
 	public Roi(String couleur) {
-		this.couleur = couleur;
+		super(couleur);
 		if(couleur == "noir")
 		{
 			this.nom = "\u265a";

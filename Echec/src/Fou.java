@@ -4,7 +4,7 @@ public class Fou extends Piece {
 	}
 	
 	public Fou(String couleur) {
-		this.couleur = couleur;
+		super(couleur);
 		if(couleur == "noir")
 		{
 			this.nom = "\u265d";
