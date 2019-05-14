@@ -43,11 +43,11 @@ public class Echiquier {
 				}
 				else if(i == 0 && j == 3)
 				{
-					plateau[i][j] = new Case(new Roi("noir"));
+					plateau[i][j] = new Case(new Reine("noir"));
 				}
 				else if(i == 0 && j == 4)
 				{
-					plateau[i][j] = new Case(new Reine("noir"));
+					plateau[i][j] = new Case(new Roi("noir"));
 				}
 				else if(i == 0 && j == 5)
 				{
@@ -83,11 +83,11 @@ public class Echiquier {
 				}
 				else if(i == 7 && j == 3)
 				{
-					plateau[i][j] = new Case(new Roi("blanc"));
+					plateau[i][j] = new Case(new Reine("blanc"));
 				}
 				else if(i == 7 && j == 4)
 				{
-					plateau[i][j] = new Case(new Reine("blanc"));
+					plateau[i][j] = new Case(new Roi("blanc"));
 				}
 				else if(i == 7 && j == 5)
 				{
