@@ -22,7 +22,7 @@ public class Pion extends Piece {
 		
 		if(depart.caseOccupe("blanc")) {
 			if (depart.getColonne() == arrive.getColonne()) { //si meme colonne
-				if (arr.caseOccupe() == false) { // si case d'arrivée vide 
+				if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // si case d'arrivée vide OU contient piece noire 
 					if (dpt.getLigne() == 6) { // si 1er tour de pion
 						if (arr.getLigne() == dpt.getLigne() - 2) { // si c 2 fois la case plus haute
 							return true;
@@ -48,7 +48,7 @@ public class Pion extends Piece {
 		
 		else if (depart.caseOccupe("noir")) {
 			if (depart.getColonne() == arrive.getColonne()) { //si meme colonne
-				if (arr.caseOccupe() == false) { // si case d'arrivée vide 
+				if (arr.caseOccupe() == false || arr.caseOccupe("blanc")) { // si case d'arrivée vide OU case contient piece blanche
 					if (dpt.getLigne() == 1) { // si 1er tour de pion
 						if (arr.getLigne() == dpt.getLigne() + 2) { // si c 2 fois la case plus basse
 							return true;
@@ -72,9 +72,17 @@ public class Pion extends Piece {
 			}
 		}
 		else return false;
-	}
+	} // fin deplacementValide
 	
 	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
+		
+		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
+		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
+		
+		if (deplacementValide(echec, dpt, arr)) {
+			dpt = new Case();
+			arr = new Case(arrive.getLigne(), arrive.getColonne(), this);
+		}
 		return echec;
 	}
 }
