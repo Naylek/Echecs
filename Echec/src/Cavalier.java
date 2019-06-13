@@ -15,8 +15,8 @@ public class Cavalier extends Piece {
 		}
 	}
 	
-	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive) {
-		
+	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive) {return false;}
+		/*
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
@@ -31,7 +31,7 @@ public class Cavalier extends Piece {
 		} else {
 			return false;
 		}
-	}
+	}*/
 	
 	/*
 	--> 

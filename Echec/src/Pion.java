@@ -34,6 +34,7 @@ public class Pion extends Piece {
 						return true;
 					} else {
 						System.out.println("Déplacement impossible : le pion ne se déplace pas aussi loin.");
+						System.out.println("bruh");
 						return false;
 					}
 				} else {

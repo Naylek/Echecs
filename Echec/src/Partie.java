@@ -12,6 +12,5 @@ public class Partie {
 		j1.choixDeplacement(plateau);
 		System.out.println(plateau);
 		
-		
 	}
 }
