@@ -34,6 +34,7 @@ public class Roi extends Piece{
 	--> dpt.ligne == arr.ligne+1 && dpt.colonne == arr.colonne+1
 	--> dpt.ligne == arr.ligne+1 && dpt.colonne == arr.colonne-1
 	--> dpt.ligne == arr.ligne-1 && dpt.colonne == arr.colonne+1
+	--> dpt.ligne == arr.ligne-1 && dpt.colonne == arr.colonne-1
 	--> ne passe pas par dessus sa couleur
 	--> peut bouffer un pion ennemi SI CA LE MET PAS EN ECHEC !!
 	*/
