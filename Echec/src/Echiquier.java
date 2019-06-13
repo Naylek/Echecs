@@ -121,6 +121,11 @@ public class Echiquier {
 		this.plateau[i][j] = new Case(p);
 	}
 
+	public void setCase(int ligne, int colonne, Case c) 
+	{
+		this.plateau[ligne][colonne] = c;
+	}
+	
 	public void setPlateau(Case[][] plateau) {
 		this.plateau = plateau;
 	}
@@ -153,4 +158,5 @@ public class Echiquier {
 		}
 		return s;		
 	}
+
 }
