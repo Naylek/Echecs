@@ -1,8 +1,11 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Joueur {
 	
@@ -135,10 +138,39 @@ public class Joueur {
 		}
 	}
 	
-	public void charger()
-	{
-		
-	}
+//	public void charger()
+//	{
+//		 try
+//		 {
+//			 while(Donnees.figure.size() != 0)
+//			 {
+//				 Donnees.figure.remove(0);
+//		     }
+//			 FileReader fr = new FileReader(new File(nomFichier));
+//			 BufferedReader br = new BufferedReader(fr);
+//			 String line = br.readLine();
+//			 while(line != null)
+//			 {
+////				 System.out.println(line);
+//				 StringTokenizer st = new StringTokenizer(line, "\t");
+//				 Figure fig = new Figure();
+//				 fig.setFull(st.nextToken());
+//				 fig.setForme(st.nextToken());
+//				 fig.setX(Integer.parseInt(st.nextToken()));
+//				 fig.setY(Integer.parseInt(st.nextToken()));
+//				 fig.setTaille(Integer.parseInt(st.nextToken()));
+//				 fig.setCouleur(Integer.parseInt(st.nextToken()));
+//				 Donnees.figure.add(fig);
+//				 line = br.readLine();
+//		      }
+//		      br.close();
+//		      fr.close();
+//		 }
+//		 catch(IOException e)
+//		 {
+//			 System.out.println(e);
+//		 }
+//	}
 	
 	public void choixDeplacement(Echiquier echec)
 	{
