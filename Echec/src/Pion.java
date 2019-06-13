@@ -76,9 +76,6 @@ public class Pion extends Piece {
 	
 	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
 		
-//		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
-//		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
-		
 		if (deplacementValide(echec, depart, arrive)) {
 			echec.setCase(depart.getLigne(), depart.getColonne(), new Case());
 			echec.setCase(arrive.getLigne(), arrive.getColonne(), new Case(arrive.getLigne(), arrive.getColonne(), this));
