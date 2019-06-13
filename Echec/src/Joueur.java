@@ -126,7 +126,7 @@ public class Joueur {
 		
 		departChoix = getChoix(depart, echec);
 		arriveChoix = getChoix(arrive,echec);
-		departChoix.getPiece().seDeplacer(echec, departChoix, arriveChoix); // prend la methode "seDeplacer" de la piece choisi au depart puis la deplace si le mouvement est valide	
+		echec = departChoix.getPiece().seDeplacer(echec, departChoix, arriveChoix); // prend la methode "seDeplacer" de la piece choisi au depart puis la deplace si le mouvement est valide	
 
 		//getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec));
 		//if(getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec));
