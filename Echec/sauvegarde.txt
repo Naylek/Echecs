@@ -1,35 +1,27 @@
-♜	noir
-♞	noir
-♝	noir
-♛	noir
-♚	noir
-♝	noir
-♞	noir
-♜	noir
-♟	noir
-♟	noir
-♟	noir
-♟	noir
-♟	noir
-♟	noir
-♟	noir
-♟	noir
+Tour	noir
+null
+Fou	noir
+Reine	noir
+Roi	noir
+Fou	noir
+Cavalier	noir
+Tour	noir
+Pion	noir
+Pion	noir
+Pion	noir
+Pion	noir
+Pion	noir
+Pion	noir
+Pion	noir
+Pion	noir
+Cavalier	noir
 null
 null
 null
 null
 null
 null
-null
-♜	noir
-null
-null
-null
-null
-null
-null
-null
-null
+Tour	noir
 null
 null
 null
@@ -46,19 +38,27 @@ null
 null
 null
 null
-♙	blanc
-♙	blanc
-♙	blanc
-♙	blanc
-♙	blanc
-♙	blanc
-♙	blanc
-♙	blanc
-♖	blanc
-♘	blanc
-♗	blanc
-♕	blanc
-♔	blanc
-♗	blanc
-♘	blanc
-♖	blanc
+null
+null
+null
+null
+null
+null
+null
+null
+Pion	blanc
+Pion	blanc
+Pion	blanc
+Pion	blanc
+Pion	blanc
+Pion	blanc
+Pion	blanc
+Pion	blanc
+Tour	blanc
+Cavalier	blanc
+Fou	blanc
+Reine	blanc
+Roi	blanc
+Fou	blanc
+Cavalier	blanc
+Tour	blanc

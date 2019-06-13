@@ -9,8 +9,14 @@ public class Partie {
 		plateau.setCase(2, 7, t);
 		System.out.println(plateau);
 		Joueur j1 = new Joueur();
-		j1.choixDeplacement(plateau);
-		System.out.println(plateau);
+		for(int i = 0; i < 10; i++)//pour faire plusieurs fois la saisie juste pour tester plus efficacement
+		{
+			j1.choixDeplacement(plateau);
+			System.out.println(plateau);
+		}
+//		j1.choixDeplacement(plateau);
+//		j1.sauver("sauvegarde.txt", plateau);
+		
 		
 	}
 }

@@ -126,7 +126,7 @@ public class Joueur {
 					{
 						bw.write("null" + "\n");
 					}
-					else bw.write(echec.getCase(i, j).getPiece().getNom() + "\t" + echec.getCase(i, j).getPiece().getCouleur() + "\n");
+					else bw.write(echec.getCase(i, j).getPiece().getClass().getName() + "\t" +  echec.getCase(i, j).getPiece().getCouleur() + "\n");
 				}
 			}
 			bw.close();
@@ -138,14 +138,11 @@ public class Joueur {
 		}
 	}
 	
-//	public void charger()
+//	public void charger(String nomFichier, Echiquier echec)
 //	{
+//		String nomPiece;
 //		 try
 //		 {
-//			 while(Donnees.figure.size() != 0)
-//			 {
-//				 Donnees.figure.remove(0);
-//		     }
 //			 FileReader fr = new FileReader(new File(nomFichier));
 //			 BufferedReader br = new BufferedReader(fr);
 //			 String line = br.readLine();
@@ -153,7 +150,14 @@ public class Joueur {
 //			 {
 ////				 System.out.println(line);
 //				 StringTokenizer st = new StringTokenizer(line, "\t");
-//				 Figure fig = new Figure();
+//				 for(int i = 0; i <= 7; i++)//parcours de l'echiquier
+//				 {
+//					 for(int j = 0; j <= 7; j++)
+//					 {
+//						 nomPiece = st.nextToken();
+//						 echec.setCase(i, j,Class.forName(nomPiece).newInstance());
+//					 }
+//				 }
 //				 fig.setFull(st.nextToken());
 //				 fig.setForme(st.nextToken());
 //				 fig.setX(Integer.parseInt(st.nextToken()));
@@ -180,23 +184,21 @@ public class Joueur {
 		Case arriveChoix;//pareille
 		int colonne = 0;
 		int ligne = 0;
-		System.out.println("Veuillez choisir la pièce que vous voulez déplacer (exemple : 'A6')\n"); // 1er choix une piece
+		System.out.print("Veuillez choisir la pièce que vous voulez déplacer (exemple : 'A6')\n"); // 1er choix une piece
 		depart = choixPiece(echec); // verifie 1er choix est une piece
 		//System.out.println(getChoix(depart, echec) + " -> 1er avec conversion"); // juste pour afficher la case choisie
 		this.setColonneSaisie(depart, echec); //setColonne par rapport à la saisie
 		this.setLigneSaisie(depart, echec); // setLigne par rapport à la saisie
 
-		System.out.println("Veuillez choisir la case de destination\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
+		System.out.print("Veuillez choisir la case de destination\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
 		arrive = memeChoix(echec,depart); // verifie si 2eme choix pas egale au premier choix (pas de mouvement surplace)
 		this.setColonneSaisie(arrive, echec);
 		this.setLigneSaisie(arrive, echec);
 		
 		departChoix = getChoix(depart, echec);
 		arriveChoix = getChoix(arrive,echec);
-		echec = departChoix.getPiece().seDeplacer(echec, departChoix, arriveChoix); // prend la methode "seDeplacer" de la piece choisi au depart puis la deplace si le mouvement est valide	
+		departChoix.getPiece().seDeplacer(echec, departChoix, arriveChoix); // prend la methode "seDeplacer" de la piece choisi au depart puis la deplace si le mouvement est valide	
 
-		//getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec));
-		//if(getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec));
 	}
 
 
