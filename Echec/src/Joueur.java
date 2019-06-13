@@ -1,7 +1,11 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Joueur {
-
+	
 	public Joueur() {
 
 	}
@@ -105,6 +109,37 @@ public class Joueur {
 		return arrive;
 	}
 
+	public void sauver(String nomFichier, Echiquier echec)
+	{
+//		echec.setCase(4, 4, new Pion("noir"));
+		try
+		{
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(nomFichier)));
+			for(int i = 0; i <= 7; i++)//parcours de l'echiquier
+			{
+				for(int j = 0; j <= 7; j++)
+				{
+					if(echec.getCase(i, j).getPiece() == null)//si la case contient rien c'est donc une case sans piece
+					{
+						bw.write("null" + "\n");
+					}
+					else bw.write(echec.getCase(i, j).getPiece().getNom() + "\t" + echec.getCase(i, j).getPiece().getCouleur() + "\n");
+				}
+			}
+			bw.close();
+			System.out.println("Sauvegarde reussi !");
+		}
+		catch(IOException e)
+		{
+			System.out.println(e);
+		}
+	}
+	
+	public void charger()
+	{
+		
+	}
+	
 	public void choixDeplacement(Echiquier echec)
 	{
 		String depart;//saisie de l'utilisateur
