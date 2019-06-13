@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -138,43 +141,64 @@ public class Joueur {
 		}
 	}
 	
-//	public void charger(String nomFichier, Echiquier echec)
-//	{
-//		String nomPiece;
-//		 try
-//		 {
-//			 FileReader fr = new FileReader(new File(nomFichier));
-//			 BufferedReader br = new BufferedReader(fr);
-//			 String line = br.readLine();
-//			 while(line != null)
-//			 {
-////				 System.out.println(line);
-//				 StringTokenizer st = new StringTokenizer(line, "\t");
-//				 for(int i = 0; i <= 7; i++)//parcours de l'echiquier
-//				 {
-//					 for(int j = 0; j <= 7; j++)
-//					 {
-//						 nomPiece = st.nextToken();
-//						 echec.setCase(i, j,Class.forName(nomPiece).newInstance());
-//					 }
-//				 }
-//				 fig.setFull(st.nextToken());
-//				 fig.setForme(st.nextToken());
-//				 fig.setX(Integer.parseInt(st.nextToken()));
-//				 fig.setY(Integer.parseInt(st.nextToken()));
-//				 fig.setTaille(Integer.parseInt(st.nextToken()));
-//				 fig.setCouleur(Integer.parseInt(st.nextToken()));
-//				 Donnees.figure.add(fig);
-//				 line = br.readLine();
-//		      }
-//		      br.close();
-//		      fr.close();
-//		 }
-//		 catch(IOException e)
-//		 {
-//			 System.out.println(e);
-//		 }
-//	}
+	public void charger(String nomFichier, Echiquier echec)
+	{
+		String nomPiece;
+		 try
+		 {
+			 FileReader fr = new FileReader(new File(nomFichier));
+			 BufferedReader br = new BufferedReader(fr);
+			 String line = br.readLine();
+			 System.out.println(line);
+			 while(line != null)
+			 {
+//				 System.out.println(line);
+				 StringTokenizer st = new StringTokenizer(line, "\t");
+				 for(int i = 0; i <= 7; i++)//parcours de l'echiquier
+				 {
+					 for(int j = 0; j <= 7; j++)
+					 {
+						 nomPiece = st.nextToken();
+						 Class[] type = { String.class };
+						 Class classDefinition;
+						 try 
+						 {
+							 if(nomPiece != null)
+							 {
+//								System.out.println(line);
+								classDefinition = Class.forName(nomPiece);// le nom de la classe a instancier
+								Constructor cons = classDefinition .getConstructor(type); // recupere le constructeur de la classe
+							 	Object[] obj = { st.nextToken()}; // on met la couleur en parametre du constructeur ex: new Pion("noir");
+//							 	System.out.println(cons.newInstance(obj)); // ici on instancie a l'aide du constructeur
+							 	echec.setCase(i, j, cons.newInstance(obj)); // cons.newInstance(obj) equivaut a Pion = new Pion("noir");
+							 	System.out.println(echec.getCase(i, j));
+//							 	StringTokenizer st = new StringTokenizer(line, "\n");
+							 	line = br.readLine();
+							 }
+							 else
+							 {
+								 System.out.println(line);
+								 echec.setCase(i, j, new Case());
+								 line = br.readLine();
+							 }
+						 } 
+						 catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) 
+						 {
+							 e.printStackTrace();
+						 } 
+						 
+					 }
+				 }
+				 line = br.readLine();
+		      }
+		      br.close();
+		      fr.close();
+		 }
+		 catch(IOException e)
+		 {
+			 System.out.println(e);
+		 }
+	}
 	
 	public void choixDeplacement(Echiquier echec)
 	{

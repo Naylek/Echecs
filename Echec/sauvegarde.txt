@@ -1,5 +1,5 @@
 Tour	noir
-null
+Cavalier	noir
 Fou	noir
 Reine	noir
 Roi	noir
@@ -14,7 +14,7 @@ Pion	noir
 Pion	noir
 Pion	noir
 Pion	noir
-Cavalier	noir
+null
 null
 null
 null

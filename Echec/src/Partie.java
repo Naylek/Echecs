@@ -14,9 +14,8 @@ public class Partie {
 			j1.choixDeplacement(plateau);
 			System.out.println(plateau);
 		}
-//		j1.choixDeplacement(plateau);
-//		j1.sauver("sauvegarde.txt", plateau);
-		
-		
+		//j1.choixDeplacement(plateau);
+		//j1.sauver("sauvegarde.txt", plateau);
+		//j1.charger("sauvegarde.txt", plateau);
 	}
 }
