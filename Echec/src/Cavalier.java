@@ -15,8 +15,8 @@ public class Cavalier extends Piece {
 		}
 	}
 	
-	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive) {return false;}
-		/*
+	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive) {
+		
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
@@ -26,16 +26,16 @@ public class Cavalier extends Piece {
 					return true;
 				} else if (dpt.getLigne() == (arr.getLigne())-2 && (dpt.getColonne() == (arr.getColonne()-1))) { // vers haut-gauche
 					return true;
+				} else if (dpt.getLigne() == (arr.getLigne())+2 && (dpt.getColonne() == (arr.getColonne()+1))) { // vers bas-droite
+					return true;
 				}
 			}
 		} else {
 			return false;
 		}
-	}*/
+	}
 	
 	/*
-	--> 
-	--> (dpt.getLigne() == (arr.getLigne())+2 && (dpt.getColonne() == (arr.getColonne())+1) // vers bas-droite
 	--> (dpt.getLigne() == (arr.getLigne())+2 && (dpt.getColonne() == (arr.getColonne())-1) // vers bas-gauche
 	--> (dpt.getLigne() == (arr.getLigne())-1 && (dpt.getColonne() == (arr.getColonne())+2) // vers haut-droite
 	--> (dpt.getLigne() == (arr.getLigne())-1 && (dpt.getColonne() == (arr.getColonne())-2) // vers haut-gauche

@@ -113,13 +113,13 @@ public class Joueur {
 		Case arriveChoix;//pareille
 		int colonne = 0;
 		int ligne = 0;
-		System.out.println("Veuillez choisir la pièce que vous voulez déplacer (exemple : A6)\n"); // 1er choix une piece
+		System.out.println("Veuillez choisir la pièce que vous voulez déplacer (exemple : 'A6')\n"); // 1er choix une piece
 		depart = choixPiece(echec); // verifie 1er choix est une piece
 		//System.out.println(getChoix(depart, echec) + " -> 1er avec conversion"); // juste pour afficher la case choisie
 		this.setColonneSaisie(depart, echec); //setColonne par rapport à la saisie
 		this.setLigneSaisie(depart, echec); // setLigne par rapport à la saisie
 
-		System.out.println("Veuillez choisir la case que vous voulez\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
+		System.out.println("Veuillez choisir la case de destination\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
 		arrive = memeChoix(echec,depart); // verifie si 2eme choix pas egale au premier choix (pas de mouvement surplace)
 		this.setColonneSaisie(arrive, echec);
 		this.setLigneSaisie(arrive, echec);

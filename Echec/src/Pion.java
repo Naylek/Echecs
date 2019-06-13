@@ -24,7 +24,7 @@ public class Pion extends Piece {
 			if (depart.getColonne() == arrive.getColonne()) { //si meme colonne
 				if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // si case d'arrivée vide OU contient piece noire 
 					if (dpt.getLigne() == 6) { // si 1er tour de pion
-						if (arr.getLigne() == dpt.getLigne() - 2) { // si c 2 fois la case plus haute
+						if (arr.getLigne() == dpt.getLigne() - 2 || arr.getLigne() == dpt.getLigne() - 1) { // si c 2 fois la case plus haute
 							return true;
 						} else {
 							System.out.println("Déplacement impossible : le pion ne se déplace pas aussi loin.");
@@ -34,7 +34,6 @@ public class Pion extends Piece {
 						return true;
 					} else {
 						System.out.println("Déplacement impossible : le pion ne se déplace pas aussi loin.");
-						System.out.println("bruh");
 						return false;
 					}
 				} else {
@@ -49,9 +48,9 @@ public class Pion extends Piece {
 		
 		else if (depart.caseOccupe("noir")) {
 			if (depart.getColonne() == arrive.getColonne()) { //si meme colonne
-				if (arr.caseOccupe() == false || arr.caseOccupe("blanc")) { // si case d'arrivée vide OU case contient piece blanche
+				if (arr.caseOccupe() == false || arr.caseOccupe("blanc")) { // si case d'arrivée vide OU contient piece noire 
 					if (dpt.getLigne() == 1) { // si 1er tour de pion
-						if (arr.getLigne() == dpt.getLigne() + 2) { // si c 2 fois la case plus basse
+						if (arr.getLigne() == dpt.getLigne() + 2 || arr.getLigne() == dpt.getLigne() + 1) { // si c 2 fois la case plus haute
 							return true;
 						} else {
 							System.out.println("Déplacement impossible : le pion ne se déplace pas aussi loin.");
@@ -81,8 +80,8 @@ public class Pion extends Piece {
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
 		if (deplacementValide(echec, dpt, arr)) {
-			dpt = new Case();
-			arr = new Case(arrive.getLigne(), arrive.getColonne(), this);
+			depart = new Case();
+			arrive = new Case(arrive.getLigne(), arrive.getColonne(), this);
 		}
 		return echec;
 	}
