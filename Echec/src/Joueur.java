@@ -107,8 +107,10 @@ public class Joueur {
 
 	public void choixDeplacement(Echiquier echec)
 	{
-		String depart;
-		String arrive;
+		String depart;//saisie de l'utilisateur
+		String arrive;//pareille
+		Case departChoix;//case que l'utilisateur aura donc choisi
+		Case arriveChoix;//pareille
 		int colonne = 0;
 		int ligne = 0;
 		System.out.println("Veuillez choisir la pièce que vous voulez déplacer (exemple : A6)\n"); // 1er choix une piece
@@ -121,6 +123,10 @@ public class Joueur {
 		arrive = memeChoix(echec,depart); // verifie si 2eme choix pas egale au premier choix (pas de mouvement surplace)
 		this.setColonneSaisie(arrive, echec);
 		this.setLigneSaisie(arrive, echec);
+		
+		departChoix = getChoix(depart, echec);
+		arriveChoix = getChoix(arrive,echec);
+		departChoix.getPiece().seDeplacer(echec, departChoix, arriveChoix); // prend la methode "seDeplacer" de la piece choisi au depart puis la deplace si le mouvement est valide	
 
 		//getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec));
 		//if(getChoix(arrive, echec).getPiece().deplacementValide(echec, getChoix(depart, echec), getChoix(arrive, echec));

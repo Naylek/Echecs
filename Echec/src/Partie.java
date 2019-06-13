@@ -10,6 +10,7 @@ public class Partie {
 		System.out.println(plateau);
 		Joueur j1 = new Joueur();
 		j1.choixDeplacement(plateau);
+		System.out.println(plateau);
 		
 		
 	}
