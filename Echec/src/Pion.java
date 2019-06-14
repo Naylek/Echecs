@@ -26,7 +26,7 @@ public class Pion extends Piece {
 		 */
 		
 		if(depart.caseOccupe("blanc")) {
-			if (depart.getColonne() == arrive.getColonne() || ) { //si meme colonne ou si pion couleur adverse dans diagonale direct
+			if (depart.getColonne() == arrive.getColonne()) { //si meme colonne ou si pion couleur adverse dans diagonale direct
 				if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // si case d'arrivée vide OU contient piece noire 
 					if (dpt.getLigne() == 6) { // si 1er tour de pion
 						if (arr.getLigne() == dpt.getLigne() - 2 || arr.getLigne() == dpt.getLigne() - 1) { // si c 2 fois la case plus haute
