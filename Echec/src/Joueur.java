@@ -144,60 +144,47 @@ public class Joueur {
 	public void charger(String nomFichier, Echiquier echec)
 	{
 		String nomPiece;
-		 try
-		 {
-			 FileReader fr = new FileReader(new File(nomFichier));
-			 BufferedReader br = new BufferedReader(fr);
-			 String line = br.readLine();
-			 System.out.println(line);
-			 while(line != null)
-			 {
-//				 System.out.println(line);
-				 StringTokenizer st = new StringTokenizer(line, "\t");
-				 for(int i = 0; i <= 7; i++)//parcours de l'echiquier
-				 {
-					 for(int j = 0; j <= 7; j++)
-					 {
-						 nomPiece = st.nextToken();
-						 Class[] type = { String.class };
-						 Class classDefinition;
-						 try 
-						 {
-							 if(nomPiece != null)
-							 {
-//								System.out.println(line);
-								classDefinition = Class.forName(nomPiece);// le nom de la classe a instancier
-								Constructor cons = classDefinition .getConstructor(type); // recupere le constructeur de la classe
-							 	Object[] obj = { st.nextToken()}; // on met la couleur en parametre du constructeur ex: new Pion("noir");
-//							 	System.out.println(cons.newInstance(obj)); // ici on instancie a l'aide du constructeur
-							 	echec.setCase(i, j, cons.newInstance(obj)); // cons.newInstance(obj) equivaut a Pion = new Pion("noir");
-							 	System.out.println(echec.getCase(i, j));
-//							 	StringTokenizer st = new StringTokenizer(line, "\n");
-							 	line = br.readLine();
-							 }
-							 else
-							 {
-								 System.out.println(line);
-								 echec.setCase(i, j, new Case());
-								 line = br.readLine();
-							 }
-						 } 
-						 catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) 
-						 {
-							 e.printStackTrace();
-						 } 
-						 
-					 }
-				 }
-				 line = br.readLine();
-		      }
-		      br.close();
-		      fr.close();
-		 }
-		 catch(IOException e)
-		 {
-			 System.out.println(e);
-		 }
+		try
+		{
+			FileReader fr = new FileReader(new File(nomFichier));
+			BufferedReader br = new BufferedReader(fr);
+			String line = br.readLine();
+			//			 System.out.println(line);
+			for(int i = 0; i <= 7; i++)//parcours de l'echiquier
+			{					 
+				for(int j = 0; j <= 7; j++)
+				{
+					while(line != null)
+					{
+						StringTokenizer st = new StringTokenizer(line, "\t");
+						nomPiece = st.nextToken();
+						if(nomPiece != "null")
+						{
+////						System.out.println(line);
+//							Class<?> metadonne = Class.forName(nomPiece);// le nom de la classe a instancier
+////						System.out.println(metadonne.getName()); //nom de la classe prise
+//							Constructor<?> constructors = metadonne.getDeclaredConstructor();//String.class);; // recupere le constructeur de la classe
+//							System.out.println(constructors);
+//							System.out.println("Nom Piece -> "+nomPiece);
+							line = br.readLine();
+						}
+						else
+						{
+//							System.out.println(line);
+							System.out.println("null -> "+nomPiece);
+//						 	echec.setCase(i, j, new Case());
+							line = br.readLine();
+						}
+					}
+				}
+			}
+			br.close();
+			fr.close();
+		}
+		catch(IOException e)
+		{
+			System.out.println(e);
+		}
 	}
 	
 	public void choixDeplacement(Echiquier echec)
