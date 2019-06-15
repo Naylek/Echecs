@@ -157,6 +157,14 @@ public class Joueur {
 				i = Integer.parseInt(st.nextToken());
 				j = Integer.parseInt(st.nextToken());
 				couleur = st.nextToken();
+				if(couleur.equals("noir"))
+				{
+					couleur = "noir";
+				}
+				else if(couleur.equals("blanc"))
+				{
+					couleur = "blanc";
+				}
 //				System.out.println("nomPiece -> " + nomPiece +" | i -> " + i + " | j -> " + j + " | couleur -> " + couleur);
 				Piece p = null;
 				if(nomPiece.equals("Pion"))
@@ -188,8 +196,6 @@ public class Joueur {
 					echec.setCase(i, j, p);
 				}
 				echec.setCase(i, j, p);
-				System.out.println(echec.getCase(i, j));
-				System.out.println(echec.getCase(i, j).getPiece());
 				line = br.readLine();
 			}
 			br.close();
