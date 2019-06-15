@@ -143,7 +143,6 @@ public class Joueur {
 	
 	public Echiquier charger(String nomFichier, Echiquier echec)
 	{
-		Echiquier copie = null;
 		String nomPiece;
 		String couleur;
 		try
@@ -163,40 +162,35 @@ public class Joueur {
 						nomPiece = st.nextToken();
 						couleur = st.nextToken();
 						System.out.println(nomPiece + " | " + couleur);
-//						Class<?> metadonne = Class.forName(nomPiece);// le nom de la classe a instancier
-////					System.out.println(metadonne.getName()); //nom de la classe prise
-//						Constructor<?> constructors = metadonne.getDeclaredConstructor();//String.class);; // recupere le constructeur de la classe
-//						System.out.println(constructors);
-//						System.out.println("Nom Piece -> "+nomPiece);
 						if(nomPiece.equals("Pion"))
 						{
-							copie.setCase(i, j, new Pion(couleur));
+							echec.setCase(i, j, new Pion(couleur));
 						}
 						else if(nomPiece.equals("Cavalier"))
 						{
-							copie.setCase(i, j, new Cavalier(couleur));
+							echec.setCase(i, j, new Cavalier(couleur));
 						}
 						else if(nomPiece.equals("Tour"))
 						{
 							System.out.println("ca rentre");
-							copie.setCase(i, j, new Tour(couleur));
-							System.out.println(copie.getCase(i, j));
+							echec.setCase(i, j, new Tour(couleur));
+							System.out.println(echec.getCase(i, j));
 						}
 						else if(nomPiece.equals("Fou"))
 						{
-							copie.setCase(i, j, new Fou(couleur));
+							echec.setCase(i, j, new Fou(couleur));
 						}
 						else if(nomPiece.equals("Reine"))
 						{
-							copie.setCase(i, j, new Reine(couleur));
+							echec.setCase(i, j, new Reine(couleur));
 						}
 						else if(nomPiece.equals("Roi"))
 						{
-							copie.setCase(i, j, new Roi(couleur));
+							echec.setCase(i, j, new Roi(couleur));
 						}
 						else if(nomPiece.equals("null"))
 						{
-							copie.setCase(i, j, new Case());
+							echec.setCase(i, j, new Case());
 						}							
 						line = br.readLine();
 					}
@@ -210,7 +204,7 @@ public class Joueur {
 		{
 			System.out.println(e);
 		}
-		return copie;
+		return echec;
 	}
 	
 	public void choixDeplacement(Echiquier echec)
