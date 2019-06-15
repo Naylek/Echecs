@@ -9,8 +9,23 @@ import java.util.StringTokenizer;
 
 public class Joueur {
 
+	private String couleurJ;
+	
 	public Joueur() {
 
+	}
+	
+	public Joueur(String couleur)
+	{
+		this.couleurJ = couleur;
+	}
+	
+	public String getCouleurJ() {
+		return couleurJ;
+	}
+
+	public void setCouleurJ(String couleurJ) {
+		this.couleurJ = couleurJ;
 	}
 
 	public boolean choixValide(String choix) // verifie si le choix est conforme par rapport aux lettres et chiffres
