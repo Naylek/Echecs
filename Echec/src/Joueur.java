@@ -137,10 +137,9 @@ public class Joueur {
 			System.out.println(e);
 		}
 	}
-
-	public Echiquier charger(String nomFichier, Echiquier echec)
+	
+	public void charger(String nomFichier, Echiquier echec)
 	{
-		echec.setPlateau(new Case[8][8]);
 		String nomPiece;
 		int i = 0;
 		int j = 0;
@@ -152,53 +151,47 @@ public class Joueur {
 			String line = br.readLine();
 			while(line != null)
 			{
-				System.out.println(line);
+//				System.out.println(line);
 				StringTokenizer st = new StringTokenizer(line, "\t");
 				nomPiece = st.nextToken();
 				i = Integer.parseInt(st.nextToken());
 				j = Integer.parseInt(st.nextToken());
 				couleur = st.nextToken();
+//				System.out.println("nomPiece -> " + nomPiece +" | i -> " + i + " | j -> " + j + " | couleur -> " + couleur);
+				Piece p = null;
 				if(nomPiece.equals("Pion"))
 				{
-					Piece t = new Pion(couleur);
-					echec.setCase(i, j, new Case(t));
+					p = new Pion(couleur);
 				}
 				else if(nomPiece.equals("Cavalier"))
 				{
-					Piece t = new Cavalier(couleur);
-					echec.setCase(i, j, new Case(t));
+					p = new Cavalier(couleur);
 				}
 				else if(nomPiece.equals("Tour"))
 				{
-					System.out.println("ca rentre");
-					Piece t = new Tour(couleur);
-					echec.setCase(i, j, new Case(t));
-//					System.out.println(echec.getCase(i, j));
+					p = new Tour(couleur);
 				}
 				else if(nomPiece.equals("Fou"))
 				{
-					Piece t = new Fou(couleur);
-					echec.setCase(i, j, new Case(t));
+					p = new Fou(couleur);
 				}
 				else if(nomPiece.equals("Reine"))
 				{
-					Piece t = new Reine(couleur);
-					echec.setCase(i, j, new Case(t));
+					p = new Reine(couleur);
 				}
 				else if(nomPiece.equals("Roi"))
 				{
-					Piece t = new Roi(couleur);
-					echec.setCase(i, j, new Case(t));
+					p = new Roi(couleur);
 				}
 				else if(nomPiece.equals("."))
 				{
-					echec.setCase(i, j, new Case());
-				}							
+					echec.setCase(i, j, p);
+				}
+				echec.setCase(i, j, p);
+				System.out.println(echec.getCase(i, j));
+				System.out.println(echec.getCase(i, j).getPiece());
 				line = br.readLine();
-				System.out.println(line);
 			}
-			//				}
-			//			}
 			br.close();
 			fr.close();
 			System.out.println("Chargement reussi !");
@@ -207,8 +200,7 @@ public class Joueur {
 		{
 			System.out.println(e);
 		}
-		return echec;
-	}
+	}	
 
 	public void choixDeplacement(Echiquier echec)
 	{
@@ -216,8 +208,6 @@ public class Joueur {
 		String arrive;//pareille
 		Case departChoix;//case que l'utilisateur aura donc choisi
 		Case arriveChoix;//pareille
-		int colonne = 0;
-		int ligne = 0;
 		System.out.print("Veuillez choisir la pièce que vous voulez déplacer (exemple : 'A6')\n"); // 1er choix une piece
 		depart = choixPiece(echec); // verifie 1er choix est une piece
 		//System.out.println(getChoix(depart, echec) + " -> 1er avec conversion"); // juste pour afficher la case choisie

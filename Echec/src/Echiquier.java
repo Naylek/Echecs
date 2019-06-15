@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
 public class Echiquier {
 	
 	private Case[][] plateau;
@@ -106,7 +112,6 @@ public class Echiquier {
 		}
 	}
 	
-	
 	public void afficheCasePlateau(int i, int j) {
 		System.out.println(this.plateau[i][j]);
 	}
@@ -120,7 +125,7 @@ public class Echiquier {
 	{
 		this.plateau[i][j] = new Case(p);
 	}
-
+	
 	public void setCase(int ligne, int colonne, Case c) 
 	{
 		this.plateau[ligne][colonne] = c;
@@ -128,6 +133,11 @@ public class Echiquier {
 	
 	public void setPlateau(Case[][] plateau) {
 		this.plateau = plateau;
+	}
+	
+	public Case[][] getPlateau()
+	{
+		return this.plateau;
 	}
 	
 	public String toString() {

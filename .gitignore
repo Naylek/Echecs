@@ -71,3 +71,5 @@ Echec/src/Cavalier.java
 .recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/segments_9
 .recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/segments_a
 .recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/segments_b
+*.config
+.recommenders/snipmatch/repositories/http___git_eclipse_org_gitroot_recommenders_org_eclipse_recommenders_snipmatch_snippets_git/
