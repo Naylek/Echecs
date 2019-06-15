@@ -15,7 +15,7 @@ public class Pion extends Piece {
 		}
 	}
 	
-	public boolean CouleurOpDiagBlanc(Echiquier echec, Case depart, Case arrive) { // verifie si une piece de couleure opposée est dans la diagonale+1
+	public boolean CouleurOpDiagBlanc(Case depart, Case arrive) { // verifie si une piece de couleur opposée est dans la diagonale+1
 		
 		if(depart.getColonne() == arrive.getColonne()+1 && arrive.caseOccupe("noir")) {
 			return true;
@@ -26,7 +26,7 @@ public class Pion extends Piece {
 		}
 	}
 	
-	public boolean CouleurOpDiagNoir(Echiquier echec, Case depart, Case arrive) { // verifie si une piece de couleure opposée est dans la diagonale+1
+	public boolean CouleurOpDiagNoir(Case depart, Case arrive) { // verifie si une piece de couleur opposée est dans la diagonale+1
 		
 		if(depart.getColonne() == arrive.getColonne()+1 && arrive.caseOccupe("blanc")) {
 			return true;
@@ -44,8 +44,8 @@ public class Pion extends Piece {
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
 		if(depart.caseOccupe("blanc")) {
-			if (depart.getColonne() == arrive.getColonne() || this.CouleurOpDiagBlanc(echec, depart, arrive)) { //si meme colonne ou si pion couleur adverse dans diagonale direct
-				if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // si case d'arrivée vide OU contient piece noire 
+			if (depart.getColonne() == arrive.getColonne() || this.CouleurOpDiagBlanc(depart, arrive)) { //si meme colonne ou si pion couleur adverse dans diagonale direct
+				if (arr.caseOccupe() == false || (arr.caseOccupe("noir") && depart.getColonne() != arrive.getColonne() ) ) { // si case d'arrivée vide OU contient piece noire pas en face
 					if (dpt.getLigne() == 6) { // si 1er tour de pion
 						if (arr.getLigne() == dpt.getLigne() - 2 || arr.getLigne() == dpt.getLigne() - 1) { // si c 2 fois la case plus haute
 							System.out.println("blabla");
@@ -72,8 +72,8 @@ public class Pion extends Piece {
 		}
 		
 		else if (depart.caseOccupe("noir")) {
-			if (depart.getColonne() == arrive.getColonne() || this.CouleurOpDiagNoir(echec, depart, arrive) ) { //si meme colonne
-				if (arr.caseOccupe() == false || arr.caseOccupe("blanc")) { // si case d'arrivée vide OU contient piece noire 
+			if (depart.getColonne() == arrive.getColonne() || this.CouleurOpDiagNoir(depart, arrive) ) { //si meme colonne
+				if (arr.caseOccupe() == false || (arr.caseOccupe("blanc") && depart.getColonne() != arrive.getColonne() ) ) { // si case d'arrivée vide OU contient piece noire pas en face
 					if (dpt.getLigne() == 1) { // si 1er tour de pion
 						if (arr.getLigne() == dpt.getLigne() + 2 || arr.getLigne() == dpt.getLigne() + 1) { // si c 2 fois la case plus haute
 							return true;

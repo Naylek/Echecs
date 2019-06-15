@@ -55,6 +55,7 @@ public class Cavalier extends Piece {
 					return false;
 				}
 			} else {
+				System.out.println("Déplacement impossible pour le cavalier. (Rappel: le cavalier se déplace en 'L')");
 				return false;
 			}
 		}
