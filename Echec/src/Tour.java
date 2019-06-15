@@ -15,22 +15,32 @@
 		}
 	}
 	
-	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive) {return false;}
-		/*
+	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive) {
+		
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
 		if(depart.caseOccupe("blanc")) {
 			if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // case arrivée vide ou pièce couleur opposée
-				if(dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()+x) {
+				if(dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()+x) { // vers la droite
+					return true;
+				} else if(dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()-x) { // vers la gauche
+					return true;
+				} else if(dpt.getLigne() == arr.getLigne()+x && dpt.getColonne() == arr.getColonne()) { // vers le bas
+					return true;
+				} else if(dpt.getLigne() == arr.getLigne()-x && dpt.getColonne() == arr.getColonne()) { // vers le haut
 					return true;
 				}
 			}
 		}
 		
+		for(int i = dpt.getColonne(); i < arr.getColonne(); i++) {
+			
+		}
+		
 		
 		return false;
-	}*/
+	}
 	
 	/*
 	--> case arrivée vide ou pièce couleur opposée

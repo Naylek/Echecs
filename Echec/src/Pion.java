@@ -42,13 +42,13 @@ public class Pion extends Piece {
 		
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
-		Case temp = echec.getCase(depart.getLigne()-1, depart.getColonne());
+		Case dptSuiv = echec.getCase(depart.getLigne()-1, depart.getColonne());
 		
 		if(depart.caseOccupe("blanc")) {
 			if (depart.getColonne() == arrive.getColonne() || this.CouleurOpDiagBlanc(depart, arrive)) { //si meme colonne ou si pion couleur adverse dans diagonale direct
 				if (arr.caseOccupe() == false || (arr.caseOccupe("noir") && depart.getColonne() != arrive.getColonne() ) ) { // si case d'arrivée vide OU contient piece noire en diag
 					if (dpt.getLigne() == 6) { // si 1er tour de pion
-						if ((arr.getLigne() == dpt.getLigne() - 2 && temp.caseOccupe() == false) || arr.getLigne() == dpt.getLigne() - 1) { // si c 2 fois la case plus haute ou 1
+						if ((arr.getLigne() == dpt.getLigne() - 2 && dptSuiv.caseOccupe() == false) || arr.getLigne() == dpt.getLigne() - 1) { // si c 2 fois la case plus haute ou 1
 							return true;
 						} else {
 							System.out.println("Déplacement impossible : le pion ne se déplace pas aussi loin.");
@@ -74,7 +74,7 @@ public class Pion extends Piece {
 			if (depart.getColonne() == arrive.getColonne() || this.CouleurOpDiagNoir(depart, arrive) ) { //si meme colonne
 				if (arr.caseOccupe() == false || (arr.caseOccupe("blanc") && depart.getColonne() != arrive.getColonne() ) ) { // si case d'arrivée vide OU contient piece noire pas en face
 					if (dpt.getLigne() == 1) { // si 1er tour de pion
-						if ((arr.getLigne() == dpt.getLigne() + 2 && temp.caseOccupe() == false) || arr.getLigne() == dpt.getLigne() + 1) { // si c 2 fois la case plus haute
+						if ((arr.getLigne() == dpt.getLigne() + 2 && dptSuiv.caseOccupe() == false) || arr.getLigne() == dpt.getLigne() + 1) { // si c 2 fois la case plus haute
 							return true;
 						} else {
 							System.out.println("Déplacement impossible : le pion ne se déplace pas aussi loin.");
