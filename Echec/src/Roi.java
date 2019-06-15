@@ -27,14 +27,14 @@ public class Roi extends Piece{
 	
 	/*
 	--> case arrivée vide ou pièce couleur opposée
-	--> dpt.ligne == arr.ligne && dpt.colonne == arr.colonne+1
-	--> dpt.ligne == arr.ligne && dpt.colonne == arr.colonne-1
-	--> dpt.ligne == arr.ligne+1 && dpt.colonne == arr.colonne
-	--> dpt.ligne == arr.ligne-1 && dpt.colonne == arr.colonne
-	--> dpt.ligne == arr.ligne+1 && dpt.colonne == arr.colonne+1
-	--> dpt.ligne == arr.ligne+1 && dpt.colonne == arr.colonne-1
-	--> dpt.ligne == arr.ligne-1 && dpt.colonne == arr.colonne+1
-	--> dpt.ligne == arr.ligne-1 && dpt.colonne == arr.colonne-1
+	--> dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()+1
+	--> dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()-1
+	--> dpt.getLigne() == arr.getLigne()+1 && dpt.getColonne() == arr.getColonne()
+	--> dpt.getLigne() == arr.getLigne()-1 && dpt.getColonne() == arr.getColonne()
+	--> dpt.getLigne() == arr.getLigne()+1 && dpt.getColonne() == arr.getColonne()+1
+	--> dpt.getLigne() == arr.getLigne()+1 && dpt.getColonne() == arr.getColonne()-1
+	--> dpt.getLigne() == arr.getLigne()-1 && dpt.getColonne() == arr.getColonne()+1
+	--> dpt.getLigne() == arr.getLigne()-1 && dpt.getColonne() == arr.getColonne()-1
 	--> ne passe pas par dessus sa couleur
 	--> peut bouffer un pion ennemi SI CA LE MET PAS EN ECHEC !!
 	*/

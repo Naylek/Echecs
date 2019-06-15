@@ -22,10 +22,10 @@ public class Fou extends Piece {
 		
 		/*
 		--> case arrivée vide ou pièce couleur opposée
-		--> dpt.ligne == arr.ligne+x && dpt.colonne == arr.colonne+x avec 1<X<7
-		--> dpt.ligne == arr.ligne+x && dpt.colonne == arr.colonne-x avec 1<X<7
-		--> dpt.ligne == arr.ligne-x && dpt.colonne == arr.colonne+x avec 1<X<7
-		--> dpt.ligne == arr.ligne-x && dpt.colonne == arr.colonne-x avec 1<X<7
+		--> dpt.getLigne() == arr.getLigne()+x && dpt.getColonne() == arr.getColonne()+x avec 1<X<7
+		--> dpt.getLigne() == arr.getLigne()+x && dpt.getColonne() == arr.getColonne()-x avec 1<X<7
+		--> dpt.getLigne() == arr.getLigne()-x && dpt.getColonne() == arr.getColonne()+x avec 1<X<7
+		--> dpt.getLigne() == arr.getLigne()-x && dpt.getColonne() == arr.getColonne()-x avec 1<X<7
 		--> si meme couleur devant, peut se deplacer jusqu'avant le pion meme couleur, pas après
 		--> si couleur ennemi devant, peut se deplacer jusqu'au pion ennemi (et le bouffer), pas après
 		*/
