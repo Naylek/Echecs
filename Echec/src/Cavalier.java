@@ -106,7 +106,6 @@ public class Cavalier extends Piece {
 		
 		if (deplacementValide(echec, depart, arrive)) {
 			echec.setCase(depart.getLigne(), depart.getColonne(), new Case());
-			echec.setCase(arrive.getLigne(), arrive.getColonne(), new Case());
 			echec.setCase(arrive.getLigne(), arrive.getColonne(), new Case(arrive.getLigne(), arrive.getColonne(), this));
 		}
 		

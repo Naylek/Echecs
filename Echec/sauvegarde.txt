@@ -38,15 +38,15 @@ null
 null
 null
 null
+null
+null
+null
+null
+null
+null
+null
+null
 Pion	blanc
-null
-null
-null
-null
-null
-null
-null
-null
 Pion	blanc
 Pion	blanc
 Pion	blanc
