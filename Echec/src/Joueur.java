@@ -110,11 +110,15 @@ public class Joueur {
 		while(this.getChoix(depart, echec).caseOccupe() == false) // tant que le choix n'est pas une piece il resaisit
 		{
 			System.out.println("Choix non conforme ! La case choisie n'est pas une pièce : ");
-			depart = this.saisieControle(echec);
+			if(this.getChoix(depart, echec).getPiece().getCouleur().equals(this.couleurJ))
+			{
+				depart = this.saisieControle(echec);
+			}
+			else System.out.println("Choix non conforme ! Cette piece ne vous appartient pas.");
 		}
 		return depart;
 	}
-
+	
 	public String memeChoix(Echiquier echec, String depart)
 	{
 		String arrive;
