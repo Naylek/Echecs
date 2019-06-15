@@ -4,14 +4,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class Joueur {
-	
+
 	public Joueur() {
 
 	}
@@ -117,7 +114,7 @@ public class Joueur {
 
 	public void sauver(String nomFichier, Echiquier echec)
 	{
-//		echec.setCase(4, 4, new Pion("noir"));
+		//		echec.setCase(4, 4, new Pion("noir"));
 		try
 		{
 			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(nomFichier)));
@@ -127,9 +124,9 @@ public class Joueur {
 				{
 					if(echec.getCase(i, j).getPiece() == null)//si la case contient rien c'est donc une case sans piece
 					{
-						bw.write("null" + "\n");
+						bw.write(new Case() + "\t" + i + "\t" + j +  "\t" + "0" + "\n");
 					}
-					else bw.write(echec.getCase(i, j).getPiece().getClass().getName() + "\t" +  echec.getCase(i, j).getPiece().getCouleur() + "\n");
+					else bw.write(echec.getCase(i, j).getPiece().getClass().getName() + "\t" + i + "\t" + j + "\t"+ echec.getCase(i, j).getPiece().getCouleur() + "\n");
 				}
 			}
 			bw.close();
@@ -140,62 +137,68 @@ public class Joueur {
 			System.out.println(e);
 		}
 	}
-	
+
 	public Echiquier charger(String nomFichier, Echiquier echec)
 	{
+		echec.setPlateau(new Case[8][8]);
 		String nomPiece;
+		int i = 0;
+		int j = 0;
 		String couleur;
 		try
 		{
 			FileReader fr = new FileReader(new File(nomFichier));
 			BufferedReader br = new BufferedReader(fr);
 			String line = br.readLine();
-			//			 System.out.println(line);
-			if(line != null)
+			while(line != null)
 			{
-				for(int i = 0; i <= 7; i++)//parcours de l'echiquier
-				{					 
-					for(int j = 0; j <= 7; j++)
-					{
-
-						StringTokenizer st = new StringTokenizer(line, "\t");
-						nomPiece = st.nextToken();
-						couleur = st.nextToken();
-						System.out.println(nomPiece + " | " + couleur);
-						if(nomPiece.equals("Pion"))
-						{
-							echec.setCase(i, j, new Pion(couleur));
-						}
-						else if(nomPiece.equals("Cavalier"))
-						{
-							echec.setCase(i, j, new Cavalier(couleur));
-						}
-						else if(nomPiece.equals("Tour"))
-						{
-							System.out.println("ca rentre");
-							echec.setCase(i, j, new Tour(couleur));
-							System.out.println(echec.getCase(i, j));
-						}
-						else if(nomPiece.equals("Fou"))
-						{
-							echec.setCase(i, j, new Fou(couleur));
-						}
-						else if(nomPiece.equals("Reine"))
-						{
-							echec.setCase(i, j, new Reine(couleur));
-						}
-						else if(nomPiece.equals("Roi"))
-						{
-							echec.setCase(i, j, new Roi(couleur));
-						}
-						else if(nomPiece.equals("null"))
-						{
-							echec.setCase(i, j, new Case());
-						}							
-						line = br.readLine();
-					}
+				System.out.println(line);
+				StringTokenizer st = new StringTokenizer(line, "\t");
+				nomPiece = st.nextToken();
+				i = Integer.parseInt(st.nextToken());
+				j = Integer.parseInt(st.nextToken());
+				couleur = st.nextToken();
+				if(nomPiece.equals("Pion"))
+				{
+					Piece t = new Pion(couleur);
+					echec.setCase(i, j, new Case(t));
 				}
+				else if(nomPiece.equals("Cavalier"))
+				{
+					Piece t = new Cavalier(couleur);
+					echec.setCase(i, j, new Case(t));
+				}
+				else if(nomPiece.equals("Tour"))
+				{
+					System.out.println("ca rentre");
+					Piece t = new Tour(couleur);
+					echec.setCase(i, j, new Case(t));
+//					System.out.println(echec.getCase(i, j));
+				}
+				else if(nomPiece.equals("Fou"))
+				{
+					Piece t = new Fou(couleur);
+					echec.setCase(i, j, new Case(t));
+				}
+				else if(nomPiece.equals("Reine"))
+				{
+					Piece t = new Reine(couleur);
+					echec.setCase(i, j, new Case(t));
+				}
+				else if(nomPiece.equals("Roi"))
+				{
+					Piece t = new Roi(couleur);
+					echec.setCase(i, j, new Case(t));
+				}
+				else if(nomPiece.equals("."))
+				{
+					echec.setCase(i, j, new Case());
+				}							
+				line = br.readLine();
+				System.out.println(line);
 			}
+			//				}
+			//			}
 			br.close();
 			fr.close();
 			System.out.println("Chargement reussi !");
@@ -206,7 +209,7 @@ public class Joueur {
 		}
 		return echec;
 	}
-	
+
 	public void choixDeplacement(Echiquier echec)
 	{
 		String depart;//saisie de l'utilisateur
@@ -225,7 +228,7 @@ public class Joueur {
 		arrive = memeChoix(echec,depart); // verifie si 2eme choix pas egale au premier choix (pas de mouvement surplace)
 		this.setColonneSaisie(arrive, echec);
 		this.setLigneSaisie(arrive, echec);
-		
+
 		departChoix = getChoix(depart, echec);
 		arriveChoix = getChoix(arrive,echec);
 		departChoix.getPiece().seDeplacer(echec, departChoix, arriveChoix); // prend la methode "seDeplacer" de la piece choisi au depart puis la deplace si le mouvement est valide	
