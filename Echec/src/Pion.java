@@ -15,14 +15,22 @@ public class Pion extends Piece {
 		}
 	}
 	
-	public boolean CouleurOpDiag(Echiquier echec, Case depart, Case arrive) { // verifie si une piece de couleure opposée est dans la diagonale+1
-		
-		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
-		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
+	public boolean CouleurOpDiagBlanc(Echiquier echec, Case depart, Case arrive) { // verifie si une piece de couleure opposée est dans la diagonale+1
 		
 		if(depart.getColonne() == arrive.getColonne()+1 && arrive.caseOccupe("noir")) {
 			return true;
 		} else if (depart.getColonne() == arrive.getColonne()-1 && arrive.caseOccupe("noir")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean CouleurOpDiagNoir(Echiquier echec, Case depart, Case arrive) { // verifie si une piece de couleure opposée est dans la diagonale+1
+		
+		if(depart.getColonne() == arrive.getColonne()+1 && arrive.caseOccupe("blanc")) {
+			return true;
+		} else if (depart.getColonne() == arrive.getColonne()-1 && arrive.caseOccupe("blanc")) {
 			return true;
 		} else {
 			return false;
@@ -36,16 +44,18 @@ public class Pion extends Piece {
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
 		if(depart.caseOccupe("blanc")) {
-			if (depart.getColonne() == arrive.getColonne() || this.CouleurOpDiag(echec, depart, arrive)) { //si meme colonne ou si pion couleur adverse dans diagonale direct
+			if (depart.getColonne() == arrive.getColonne() || this.CouleurOpDiagBlanc(echec, depart, arrive)) { //si meme colonne ou si pion couleur adverse dans diagonale direct
 				if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // si case d'arrivée vide OU contient piece noire 
 					if (dpt.getLigne() == 6) { // si 1er tour de pion
 						if (arr.getLigne() == dpt.getLigne() - 2 || arr.getLigne() == dpt.getLigne() - 1) { // si c 2 fois la case plus haute
+							System.out.println("blabla");
 							return true;
 						} else {
 							System.out.println("Déplacement impossible : le pion ne se déplace pas aussi loin.");
 							return false;
 						}
 					} else if (arr.getLigne() == dpt.getLigne() - 1) {
+						System.out.println("blibli");
 						return true;
 					} else {
 						System.out.println("Déplacement impossible : le pion ne se déplace pas aussi loin.");
@@ -62,7 +72,7 @@ public class Pion extends Piece {
 		}
 		
 		else if (depart.caseOccupe("noir")) {
-			if (depart.getColonne() == arrive.getColonne()) { //si meme colonne
+			if (depart.getColonne() == arrive.getColonne() || this.CouleurOpDiagNoir(echec, depart, arrive) ) { //si meme colonne
 				if (arr.caseOccupe() == false || arr.caseOccupe("blanc")) { // si case d'arrivée vide OU contient piece noire 
 					if (dpt.getLigne() == 1) { // si 1er tour de pion
 						if (arr.getLigne() == dpt.getLigne() + 2 || arr.getLigne() == dpt.getLigne() + 1) { // si c 2 fois la case plus haute
