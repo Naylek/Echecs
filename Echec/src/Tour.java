@@ -21,50 +21,50 @@
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		int compteur = 0;
 		
-		if (arr.caseOccupe() == false || arr.caseOccupe(this.couleur) == false) { // case arrivée vide ou pièce couleur opposée
+		if (!arr.caseOccupe() || !arr.caseOccupe(this.couleur)) { // case arrivée vide ou pièce couleur opposée
 			if(arr.getLigne() == dpt.getLigne() && arr.getColonne() > dpt.getColonne()) { //vers la droite
-				for(int i = dpt.getColonne()+1; i <= arr.getColonne() ; i++) {
-					if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
+				for(int i = dpt.getColonne()+1; i <= arr.getColonne() -1; i++) {
+					if(!echec.getCase(dpt.getLigne(), i).caseOccupe()) {
 						compteur++;
 					}
 				}
-				if(compteur == arr.getColonne() - dpt.getColonne()) {
+				if(compteur == Math.abs(arr.getColonne() - dpt.getColonne())-1) {
 					return true;
 				} else {
 					System.out.println("Il y a une pièce sur le chemin à droite.");
 					return false;
 				}
 			} else if(arr.getLigne() == dpt.getLigne() && arr.getColonne() < dpt.getColonne()) { //vers la gauche
-				for(int i = dpt.getColonne()-1; i >= arr.getColonne() ; i--) {
-					if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
+				for(int i = dpt.getColonne()-1; i >= arr.getColonne()+1; i--) {
+					if(!echec.getCase(dpt.getLigne(), i).caseOccupe()) {
 						compteur++;
 					}
 				}
-				if(compteur == Math.abs(arr.getColonne() - dpt.getColonne() ) ) {
+				if(compteur == Math.abs(arr.getColonne() - dpt.getColonne())-1 ) {
 					return true;
 				} else {
 					System.out.println("Il y a une pièce sur le chemin à gauche.");
 					return false;
 				}
 			} else if(arr.getLigne() < dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le haut
-				for(int i = dpt.getLigne()-1; i >= arr.getLigne() ; i--) {
+				for(int i = dpt.getLigne()-1; i >= arr.getLigne()+1; i--) {
 					if(!echec.getCase(i, dpt.getColonne()).caseOccupe() ) {
 						compteur++;
 					}
 				}
-				if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() ) ) {
+				if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() )-1 ) {
 					return true;
 				} else {
 					System.out.println("Il y a une pièce sur le chemin en haut.");
 					return false;
 				}
 			} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le bas
-				for(int i = dpt.getLigne()+1; i <= arr.getLigne() ; i++) {
-					if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
+				for(int i = dpt.getLigne()+1; i <= arr.getLigne()-1; i++) {
+					if(!echec.getCase(i, dpt.getColonne()).caseOccupe()) {
 						compteur++;
 					}
 				}
-				if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() ) ) {
+				if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() )-1 ) {
 					return true;
 				} else {
 					System.out.println("Il y a une pièce sur le chemin en bas.");
