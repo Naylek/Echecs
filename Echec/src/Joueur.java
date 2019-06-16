@@ -107,14 +107,18 @@ public class Joueur {
 	{
 		String depart;
 		depart = this.saisieControle(echec);
-		while(this.getChoix(depart, echec).caseOccupe() == false) // tant que le choix n'est pas une piece il resaisit
+		while(this.getChoix(depart, echec).caseOccupe() == false || this.getChoix(depart, echec).getPiece().getCouleur() != this.couleurJ) // tant que le choix n'est pas une piece de sa couleur il resaisit
 		{
-			System.out.println("Choix non conforme ! La case choisie n'est pas une pièce : ");
-			if(this.getChoix(depart, echec).getPiece().getCouleur() == this.couleurJ)
+			if(this.getChoix(depart, echec).caseOccupe() == false)//regarde si case choisie est vide
 			{
-				depart = this.saisieControle(echec);
+				System.out.println("Choix non conforme ! La case choisie n'est pas une pièce : ");
 			}
-			else System.out.println("Choix non conforme ! Cette piece ne vous appartient pas.");
+			else if(this.getChoix(depart, echec).getPiece().getCouleur() != this.couleurJ) // si c'est pas la meme couleur choisie
+			{
+				System.out.println("Choix non conforme ! La piece ne vous appartient pas");
+			}
+			System.out.println("Veuillez choisir la pièce que vous voulez déplacer (exemple : 'A6')");
+			depart = this.saisieControle(echec);			
 		}
 		return depart;
 	}
