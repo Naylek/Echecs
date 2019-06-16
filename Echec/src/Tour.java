@@ -20,11 +20,10 @@
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		int compteur = 0;
-		int i = 0;
 		
 		if (arr.caseOccupe() == false || arr.caseOccupe(this.couleur) == false) { // case arrivée vide ou pièce couleur opposée
 			if(arr.getLigne() == dpt.getLigne() && arr.getColonne() > dpt.getColonne()) { //vers la droite
-				for(i = dpt.getColonne()+1; i <= arr.getColonne() ; i++) {
+				for(int i = dpt.getColonne()+1; i <= arr.getColonne() ; i++) {
 					if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
 						compteur++;
 					}
@@ -36,7 +35,7 @@
 					return false;
 				}
 			} else if(arr.getLigne() == dpt.getLigne() && arr.getColonne() < dpt.getColonne()) { //vers la gauche
-				for(i = dpt.getColonne()-1; i >= arr.getColonne() ; i--) {
+				for(int i = dpt.getColonne()-1; i >= arr.getColonne() ; i--) {
 					if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
 						compteur++;
 					}
@@ -48,7 +47,7 @@
 					return false;
 				}
 			} else if(arr.getLigne() < dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le haut
-				for(i = dpt.getLigne()-1; i >= arr.getLigne() ; i--) {
+				for(int i = dpt.getLigne()-1; i >= arr.getLigne() ; i--) {
 					if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
 						compteur++;
 					}
@@ -60,7 +59,7 @@
 					return false;
 				}
 			} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le bas
-				for(i = dpt.getLigne()+1; i <= arr.getLigne() ; i++) {
+				for(int i = dpt.getLigne()+1; i <= arr.getLigne() ; i++) {
 					if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
 						compteur++;
 					}
