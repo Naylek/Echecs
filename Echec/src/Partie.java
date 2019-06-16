@@ -9,34 +9,58 @@ public class Partie {
 		Joueur j2 = new Joueur(false); //noir
 		int choix;
 		boolean tour = true;
-		
 	
-		while(tour == true)//tour joueur blanc
-		{
-			System.out.println(plateau);
-			System.out.println("Vous voulez : 1 -> sauvegarder ? | 2 -> restaurer une partie ?  | 3 -> jouer ?");
-			Scanner sc = new Scanner(System.in);
-			choix = sc.nextInt();
-			while(choix < 1 && choix > 3)
+		//while(//pas echec et mat joueur 1 || pas echec et mat joueur 2)
+//		{
+			if(tour == true)//tour joueur blanc
 			{
-				System.out.println("Saisie incorrect. Veuillez choisir un chiffre entre : [1-2-3]");
-				System.out.println("Vous voulez : 1 -> sauvegarder ? | 2 -> restaurer une partie ?  | 3 -> jouer ?");
-			}
-			if(choix == 1)
-			{
-				j1.sauver("sauvegarde.txt", plateau);
-			}
-			else if(choix == 2)
-			{
-				j1.charger("sauvegarde.txt", plateau);
-			}
-			else if(choix == 3)
-			{
-				//tant que pas echec et mat alors on joue
-				j1.choixDeplacement(plateau);
 				System.out.println(plateau);
+				System.out.println("Vous voulez : 1 -> sauvegarder ? | 2 -> restaurer une partie ?  | 3 -> jouer ?");
+				Scanner sc = new Scanner(System.in);
+				choix = sc.nextInt();
+				while(choix < 1 && choix > 3)
+				{
+					System.out.println("Saisie incorrect. Veuillez choisir un chiffre entre : [1-2-3]");
+					System.out.println("Vous voulez : 1 -> sauvegarder ? | 2 -> restaurer une partie ?  | 3 -> jouer ?");
+					choix = sc.nextInt();
+				}
+				if(choix == 1)
+				{
+					if(tour == true)
+					{
+						j1.sauver("sauvegarde.txt", plateau);
+					}
+					else if(tour == false)
+					{
+						j2.sauver("sauvegarde.txt", plateau);
+					}
+				}
+				else if(choix == 2)
+				{
+					if(tour == true)
+					{
+						j1.charger("sauvegarde.txt", plateau);
+					}
+					else if(tour == false)
+					{
+						j2.charger("sauvegarde.txt", plateau);
+					}
+				}
+				else if(choix == 3)
+				{	
+					if(tour == true)
+					{
+						j1.choixDeplacement(plateau);//doit dire aussi que le joueur est en echec
+					}
+					else if(tour == false)
+					{
+						j2.choixDeplacement(plateau);
+					}
+					System.out.println(plateau);
+					tour = false;
+				}
 			}
-		}
+//		}
 	}
 	
 	public static void main (String[] args)
