@@ -57,10 +57,12 @@ public class Partie {
 			{	
 				if(tour == true)
 				{
+					System.out.println("C'est au joueur blanc de jouer");
 					j1.choixDeplacement(plateau);//doit dire aussi que le joueur est en echec
 				}
 				else if(tour == false)
 				{
+					System.out.println("C'est au joueur noir de jouer");
 					j2.choixDeplacement(plateau);
 				}
 			}
@@ -70,6 +72,14 @@ public class Partie {
 			}
 			tour = false; //pour changer le tour
 		}
+//		if()//si J1 est en echec et mat J2 a gagné 
+//		{
+//			System.out.println("Joueur noir a gagné !");
+//		}
+//		if()//si j2 est en echec et met j1 a gagné
+//		{
+//			System.out.println("Joueur blanc a gagné !");
+//		}
 		System.out.println("Fin de jeu.");
 	}
 }
