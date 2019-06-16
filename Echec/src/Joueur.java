@@ -239,16 +239,27 @@ public class Joueur {
 		//System.out.println(getChoix(depart, echec) + " -> 1er avec conversion"); // juste pour afficher la case choisie
 		this.setColonneSaisie(depart, echec); //setColonne par rapport à la saisie
 		this.setLigneSaisie(depart, echec); // setLigne par rapport à la saisie
-
+		
 		System.out.print("Veuillez choisir la case de destination\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
 		arrive = memeChoix(echec,depart); // verifie si 2eme choix pas egale au premier choix (pas de mouvement surplace)
+		
 		this.setColonneSaisie(arrive, echec);
 		this.setLigneSaisie(arrive, echec);
-
+		
 		departChoix = getChoix(depart, echec);
 		arriveChoix = getChoix(arrive,echec);
-		departChoix.getPiece().seDeplacer(echec, departChoix, arriveChoix); // prend la methode "seDeplacer" de la piece choisi au depart puis la deplace si le mouvement est valide	
-
+		
+		while(departChoix.getPiece().deplacementValide(echec, departChoix, arriveChoix) == false)
+		{
+			System.out.println("ressaisi");
+			System.out.print("Veuillez choisir la case de destination\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
+			arrive = memeChoix(echec, depart);
+			this.setColonneSaisie(arrive, echec);
+			this.setLigneSaisie(arrive, echec);
+			arriveChoix = getChoix(arrive,echec);
+			
+		}
+		departChoix.getPiece().seDeplacer(echec, departChoix, arriveChoix); // prend la methode "seDeplacer" de la piece choisi au depart puis la deplace si le mouvement est valide
 	}
 
 
