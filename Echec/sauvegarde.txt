@@ -19,9 +19,9 @@ Pion	1	7	false
 . 	2	2	0
 . 	2	3	0
 . 	2	4	0
-Tour	2	5	false
+. 	2	5	0
 . 	2	6	0
-. 	2	7	0
+Tour	2	7	false
 . 	3	0	0
 . 	3	1	0
 . 	3	2	0
