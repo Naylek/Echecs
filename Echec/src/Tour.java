@@ -24,7 +24,7 @@
 		
 		if (arr.caseOccupe() == false || arr.caseOccupe(this.couleur) == false) { // case arrivée vide ou pièce couleur opposée
 			if(arr.getLigne() == dpt.getLigne() && arr.getColonne() > dpt.getColonne()) { //vers la droite
-				for(i = dpt.getColonne(); i < arr.getColonne() ; i++) {
+				for(i = dpt.getColonne()+1; i <= arr.getColonne() ; i++) {
 					if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
 						compteur++;
 					}
@@ -32,11 +32,11 @@
 				if(compteur == arr.getColonne() - dpt.getColonne()) {
 					return true;
 				} else {
-					System.out.println("Il y a une pièce sur le chemin DROITE.");
+					System.out.println("Il y a une pièce sur le chemin à droite.");
 					return false;
 				}
 			} else if(arr.getLigne() == dpt.getLigne() && arr.getColonne() < dpt.getColonne()) { //vers la gauche
-				for(i = dpt.getColonne(); i < arr.getColonne() ; i--) {
+				for(i = dpt.getColonne()-1; i >= arr.getColonne() ; i--) {
 					if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
 						compteur++;
 					}
@@ -44,11 +44,11 @@
 				if(compteur == Math.abs(arr.getColonne() - dpt.getColonne() ) ) {
 					return true;
 				} else {
-					System.out.println("Il y a une pièce sur le chemin GAUCHE.");
+					System.out.println("Il y a une pièce sur le chemin à gauche.");
 					return false;
 				}
 			} else if(arr.getLigne() < dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le haut
-				for(i = dpt.getLigne()-1; i < arr.getLigne() ; i--) {
+				for(i = dpt.getLigne()-1; i >= arr.getLigne() ; i--) {
 					if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
 						compteur++;
 					}
@@ -56,11 +56,11 @@
 				if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() ) ) {
 					return true;
 				} else {
-					System.out.println("Il y a une pièce sur le chemin HAUT.");
+					System.out.println("Il y a une pièce sur le chemin en haut.");
 					return false;
 				}
 			} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le bas
-				for(i = dpt.getLigne(); i < arr.getLigne() ; i++) {
+				for(i = dpt.getLigne()+1; i <= arr.getLigne() ; i++) {
 					if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
 						compteur++;
 					}
@@ -68,7 +68,7 @@
 				if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() ) ) {
 					return true;
 				} else {
-					System.out.println("Il y a une pièce sur le chemin BAS.");
+					System.out.println("Il y a une pièce sur le chemin en bas.");
 					return false;
 				}
 			} else {
