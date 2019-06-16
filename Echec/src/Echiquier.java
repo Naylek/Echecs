@@ -31,6 +31,7 @@ public class Echiquier {
 //		Piece d1b = new Reine("blanc");
 //		Piece p1b = new Pion("blanc"); Piece p2b = new Pion("blanc"); Piece p3b = new Pion("blanc"); Piece p4b = new Pion("blanc"); 
 //		Piece p5b = new Pion("blanc"); Piece p6b = new Pion("blanc"); Piece p7b = new Pion("blanc"); Piece p8b = new Pion("blanc");
+		
 		for(int i = 0 ; i <= 7 ; i++)
 		{
 			for(int j = 0 ; j <=7 ; j++)

@@ -14,6 +14,11 @@ public class Case {
 		this.piece = p;
 	}
 	
+	public Case(int l, int c) {
+		this.ligne = l;
+		this.colonne = c;
+	}
+	
 	public Case(Piece p) {
 		this.piece = p;
 	}

@@ -20,6 +20,12 @@ public class Fou extends Piece {
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
+		if(depart.caseOccupe("blanc")) {
+			if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // case arrivée vide ou pièce couleur opposée
+				
+			}
+		}
+		
 		/*
 		--> case arrivée vide ou pièce couleur opposée
 		--> dpt.getLigne() == arr.getLigne()+x && dpt.getColonne() == arr.getColonne()+x avec 1<X<7

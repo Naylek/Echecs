@@ -42,7 +42,7 @@ public class Partie {
 		Joueur j1 = new Joueur("blanc");
 		Joueur j2 = new Joueur("noir");
 		j1.sauver("sauvegarde.txt", plateau);
-		for(int i = 0; i < 3; i++)//pour faire plusieurs fois la saisie juste pour tester plus efficacement
+		for(int i = 0; i < 10; i++)//pour faire plusieurs fois la saisie juste pour tester plus efficacement
 		{
 			j1.choixDeplacement(plateau);
 			System.out.println(plateau);

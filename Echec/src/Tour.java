@@ -19,38 +19,148 @@
 		
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
+		int compteur = 0;
 		
 		if(depart.caseOccupe("blanc")) {
 			if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // case arrivée vide ou pièce couleur opposée
-				if(dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()+x) { // vers la droite
-					return true;
-				} else if(dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()-x) { // vers la gauche
-					return true;
-				} else if(dpt.getLigne() == arr.getLigne()+x && dpt.getColonne() == arr.getColonne()) { // vers le bas
-					return true;
-				} else if(dpt.getLigne() == arr.getLigne()-x && dpt.getColonne() == arr.getColonne()) { // vers le haut
-					return true;
+				if(arr.getLigne() == dpt.getLigne() && arr.getColonne() > dpt.getColonne()) { //vers la droite
+					for(int i = dpt.getColonne(); i < arr.getColonne() ; i++) {
+						if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
+							compteur++;
+						}
+					}
+					if(compteur == arr.getColonne() - dpt.getColonne()) {
+						return true;
+					} else {
+						System.out.println("Il y a une pièce sur le chemin1.");
+						return false;
+					}
+				} else if(arr.getLigne() == arr.getLigne() && dpt.getColonne() < dpt.getColonne()) { //vers la gauche
+					for(int i = dpt.getColonne(); i < arr.getColonne() ; i--) {
+						if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
+							compteur++;
+						}
+					}
+					if(compteur == Math.abs(arr.getColonne() - dpt.getColonne() ) ) {
+						return true;
+					} else {
+						System.out.println("Il y a une pièce sur le chemin2.");
+						return false;
+					}
+				} else if(arr.getLigne() < dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le haut
+					for(int i = dpt.getLigne()-1; i < arr.getLigne() ; i--) {
+						if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
+							compteur++;
+						}
+					}
+					if(compteur == Math.abs((arr.getLigne() - dpt.getLigne()) ) ) {
+						return true;
+					} else {
+						System.out.println("Il y a une pièce sur le chemin3.");
+						return false;
+					}
+				} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le bas
+					for(int i = dpt.getLigne(); i < arr.getLigne() ; i++) {
+						if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
+							compteur++;
+						}
+					}
+					if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() ) ) {
+						return true;
+					} else {
+						System.out.println("Il y a une pièce sur le chemin4.");
+						return false;
+					}
+				} else {
+					return false;
 				}
+			} else {
+				System.out.println("Déplacement impossible : un copain est sur la case demandée.");
+				return false;
 			}
 		}
 		
-		for(int i = dpt.getColonne(); i < arr.getColonne(); i++) {
-			
+		else if(depart.caseOccupe("noir")) {
+			if (arr.caseOccupe() == false || arr.caseOccupe("blanc")) { // case arrivée vide ou pièce couleur opposée
+				if(arr.getLigne() == dpt.getLigne() && arr.getColonne() > dpt.getColonne()) { //vers la droite
+					for(int i = dpt.getColonne(); i < arr.getColonne() ; i++) {
+						if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
+							compteur++;
+						}
+					}
+					if(compteur == arr.getColonne() - dpt.getColonne()) {
+						return true;
+					} else {
+						System.out.println("Il y a une pièce sur le chemin.");
+						return false;
+					}
+				} else if(arr.getLigne() == arr.getLigne() && dpt.getColonne() < dpt.getColonne()) { //vers la gauche
+					for(int i = dpt.getColonne(); i < arr.getColonne() ; i--) {
+						if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
+							compteur++;
+						}
+					}
+					if(compteur == Math.abs(arr.getColonne() - dpt.getColonne() ) ) {
+						return true;
+					} else {
+						System.out.println("Il y a une pièce sur le chemin.");
+						return false;
+					}
+				} else if(arr.getLigne() < dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le haut
+					for(int i = dpt.getLigne(); i < arr.getLigne() ; i--) {
+						if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
+							compteur++;
+						}
+					}
+					if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() ) ) {
+						return true;
+					} else {
+						System.out.println("Il y a une pièce sur le chemin.");
+						return false;
+					}
+				} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le bas
+					for(int i = dpt.getLigne(); i < arr.getLigne() ; i++) {
+						if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
+							compteur++;
+						}
+					}
+					if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() ) ) {
+						return true;
+					} else {
+						System.out.println("Il y a une pièce sur le chemin.");
+						return false;
+					}
+				} else {
+					return false;
+				}
+			} else {
+				System.out.println("Déplacement impossible : un copain est sur la case demandée.");
+				return false;
+			}
+		} else {
+			return false;
 		}
-		
-		
-		return false;
 	}
-	
-	/*
-	--> case arrivée vide ou pièce couleur opposée
-	--> dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()+x avec 1<X<7
-	--> dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()-x avec 1<X<7
-	--> dpt.getLigne() == arr.getLigne()+x && dpt.getColonne() == arr.getColonne() avec 1<X<7
-	--> dpt.getLigne() == arr.getLigne()-x && dpt.getColonne() == arr.getColonne() avec 1<X<7
-	--> si meme couleur devant, peut se deplacer jusqu'avant le pion meme couleur, pas après (
-	--> si couleur ennemi devant, peut se deplacer jusqu'au pion ennemi (et le bouffer), pas après
-	*/
+		
+		
+		/* ébauche d'une version plus simple, non finie et qui marche pas de DeplacementValide()
+		if(depart.caseOccupe("blanc")) {
+			if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // case arrivée vide ou pièce couleur opposée
+				if(arr.getColonne() == dpt.getColonne() || arr.getLigne() == dpt.getLigne()) { // vérifie déplacement sur colonne ou sur ligne
+					if () { //si y'a qqn sur le passage
+						return true;
+					}
+				} else {
+					System.out.println("La tour ne se déplace qu'en ligne ou en colonne.");
+					return false;
+				}
+			} else {
+				System.out.println("La case est occupée par un copain.");
+				return false;
+			}
+		} else {
+			return false;
+		}*/
 	
 	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
 		
