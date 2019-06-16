@@ -48,7 +48,7 @@
 				}
 			} else if(arr.getLigne() < dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le haut
 				for(int i = dpt.getLigne()-1; i >= arr.getLigne() ; i--) {
-					if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
+					if(!echec.getCase(i, dpt.getColonne()).caseOccupe() ) {
 						compteur++;
 					}
 				}
@@ -71,6 +71,7 @@
 					return false;
 				}
 			} else {
+				System.out.println("Déplacement impossible.");
 				return false;
 			}
 		} else {
