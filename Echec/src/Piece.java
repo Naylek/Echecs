@@ -1,6 +1,6 @@
 public abstract class Piece {
 	
-	protected String couleur;
+	protected boolean couleur;
 	protected String nom;
 	
 	public Piece() {
@@ -12,16 +12,16 @@ public abstract class Piece {
 		this.nom = p.nom;
 	}
 	
-	public Piece(String couleur)
+	public Piece(boolean couleur)
 	{
 		this.couleur = couleur;
 	}
 	
-	public String getCouleur() {
+	public boolean getCouleur() {
 		return this.couleur;
 	}
 	
-	public void setCouleur(String couleur) {
+	public void setCouleur(boolean couleur) {
 		this.couleur = couleur;
 	}
 	

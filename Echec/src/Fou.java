@@ -3,13 +3,13 @@ public class Fou extends Piece {
 	public Fou() {
 	}
 	
-	public Fou(String couleur) {
+	public Fou(boolean couleur) {
 		super(couleur);
-		if(couleur == "noir")
+		if(couleur == false) // noir
 		{
 			this.nom = "\u265d";
 		}
-		if(couleur == "blanc")
+		if(couleur == true) // blanc
 		{
 			this.nom = "\u2657";
 		}
@@ -20,11 +20,6 @@ public class Fou extends Piece {
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
-		if(depart.caseOccupe("blanc")) {
-			if (arr.caseOccupe() == false || arr.caseOccupe("noir")) { // case arrivée vide ou pièce couleur opposée
-				
-			}
-		}
 		
 		/*
 		--> case arrivée vide ou pièce couleur opposée

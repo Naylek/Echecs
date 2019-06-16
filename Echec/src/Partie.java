@@ -5,8 +5,8 @@ public class Partie {
 	public void menu()
 	{
 		Echiquier plateau = new Echiquier();
-		Joueur j1 = new Joueur("blanc");
-		Joueur j2 = new Joueur("noir");
+		Joueur j1 = new Joueur(true); //blanc
+		Joueur j2 = new Joueur(false); //noir
 		int choix;
 		System.out.println(plateau);
 		System.out.println("Vous voulez : 1 -> sauvegarder ? | 2 -> restaurer une partie ?  | 3 -> jouer ?");
@@ -36,11 +36,11 @@ public class Partie {
 	public static void main (String[] args)
 	{
 		Echiquier plateau = new Echiquier();
-		Tour t = new Tour("noir");
+		Tour t = new Tour(false);
 		plateau.setCase(2, 7, t);
 		System.out.println(plateau);
-		Joueur j1 = new Joueur("blanc");
-		Joueur j2 = new Joueur("noir");
+		Joueur j1 = new Joueur(true);
+		Joueur j2 = new Joueur(false);
 		j1.sauver("sauvegarde.txt", plateau);
 		for(int i = 0; i < 10; i++)//pour faire plusieurs fois la saisie juste pour tester plus efficacement
 		{

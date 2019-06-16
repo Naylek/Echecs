@@ -3,13 +3,13 @@ public class Reine extends Piece{
 	public Reine() {
 	}
 	
-	public Reine(String couleur) {
+	public Reine(boolean couleur) {
 		super(couleur);
-		if(couleur == "noir")
+		if(couleur == false) // noir
 		{
 			this.nom = "\u265b";
 		}
-		if(couleur == "blanc")
+		if(couleur == true) // blanc
 		{
 			this.nom = "\u2655";
 		}

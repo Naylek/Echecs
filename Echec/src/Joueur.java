@@ -9,22 +9,22 @@ import java.util.StringTokenizer;
 
 public class Joueur {
 
-	private String couleurJ;
+	private boolean couleurJ;
 	
 	public Joueur() {
 
 	}
 	
-	public Joueur(String couleur)
+	public Joueur(boolean couleur)
 	{
 		this.couleurJ = couleur;
 	}
 	
-	public String getCouleurJ() {
+	public boolean getCouleurJ() {
 		return couleurJ;
 	}
 
-	public void setCouleurJ(String couleurJ) {
+	public void setCouleurJ(boolean couleurJ) {
 		this.couleurJ = couleurJ;
 	}
 
@@ -110,7 +110,7 @@ public class Joueur {
 		while(this.getChoix(depart, echec).caseOccupe() == false) // tant que le choix n'est pas une piece il resaisit
 		{
 			System.out.println("Choix non conforme ! La case choisie n'est pas une pièce : ");
-			if(this.getChoix(depart, echec).getPiece().getCouleur().equals(this.couleurJ))
+			if(this.getChoix(depart, echec).getPiece().getCouleur() == this.couleurJ)
 			{
 				depart = this.saisieControle(echec);
 			}
@@ -163,6 +163,7 @@ public class Joueur {
 		int i = 0;
 		int j = 0;
 		String couleur;
+		boolean coul = false;
 		try
 		{
 			FileReader fr = new FileReader(new File(nomFichier));
@@ -178,37 +179,37 @@ public class Joueur {
 				couleur = st.nextToken();
 				if(couleur.equals("noir"))
 				{
-					couleur = "noir";
+					coul = false;
 				}
 				else if(couleur.equals("blanc"))
 				{
-					couleur = "blanc";
+					coul = true;
 				}
 //				System.out.println("nomPiece -> " + nomPiece +" | i -> " + i + " | j -> " + j + " | couleur -> " + couleur);
 				Piece p = null;
 				if(nomPiece.equals("Pion"))
 				{
-					p = new Pion(couleur);
+					p = new Pion(coul);
 				}
 				else if(nomPiece.equals("Cavalier"))
 				{
-					p = new Cavalier(couleur);
+					p = new Cavalier(coul);
 				}
 				else if(nomPiece.equals("Tour"))
 				{
-					p = new Tour(couleur);
+					p = new Tour(coul);
 				}
 				else if(nomPiece.equals("Fou"))
 				{
-					p = new Fou(couleur);
+					p = new Fou(coul);
 				}
 				else if(nomPiece.equals("Reine"))
 				{
-					p = new Reine(couleur);
+					p = new Reine(coul);
 				}
 				else if(nomPiece.equals("Roi"))
 				{
-					p = new Roi(couleur);
+					p = new Roi(coul);
 				}
 				else if(nomPiece.equals("."))
 				{

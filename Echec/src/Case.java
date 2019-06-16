@@ -52,13 +52,13 @@ public class Case {
 		return (this.piece != null);
 	}
 	
-	public boolean caseOccupe(String couleur)
+	public boolean caseOccupe(boolean couleur)
 	{
 		if(this.piece == null)
 		{
 			return false;
 		}
-		else return (this.piece.couleur.equals(couleur));
+		else return (this.piece.couleur == couleur);
 	}
 	
 	public String toString() {
