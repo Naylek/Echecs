@@ -19,7 +19,6 @@ public class Fou extends Piece {
 		
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
-		int compteur = 0;
 		
 		if (arr.caseOccupe() == false || arr.caseOccupe(this.couleur) == false) { // case arrivée vide ou pièce couleur opposée
 			if(arr.getLigne() < dpt.getLigne() && arr.getColonne() > dpt.getColonne() || arr.getLigne() > dpt.getLigne() && arr.getColonne() < dpt.getColonne()) { //diagonale vers haut/droite et bas/gauche
@@ -54,5 +53,15 @@ public class Fou extends Piece {
 	--> si couleur ennemi devant, peut se deplacer jusqu'au pion ennemi (et le bouffer), pas après
 	*/
 	
+	
+	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
+		
+		if (deplacementValide(echec, depart, arrive)) {
+			echec.setCase(depart.getLigne(), depart.getColonne(), new Case());
+			echec.setCase(arrive.getLigne(), arrive.getColonne(), new Case(arrive.getLigne(), arrive.getColonne(), this));
+		}
+		
+		return echec;
+	}
 	
 }

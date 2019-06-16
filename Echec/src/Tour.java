@@ -20,10 +20,11 @@
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		int compteur = 0;
+		int i = 0;
 		
 		if (arr.caseOccupe() == false || arr.caseOccupe(this.couleur) == false) { // case arrivée vide ou pièce couleur opposée
 			if(arr.getLigne() == dpt.getLigne() && arr.getColonne() > dpt.getColonne()) { //vers la droite
-				for(int i = dpt.getColonne(); i < arr.getColonne() ; i++) {
+				for(i = dpt.getColonne(); i < arr.getColonne() ; i++) {
 					if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
 						compteur++;
 					}
@@ -31,11 +32,11 @@
 				if(compteur == arr.getColonne() - dpt.getColonne()) {
 					return true;
 				} else {
-					System.out.println("Il y a une pièce sur le chemin.");
+					System.out.println("Il y a une pièce sur le chemin DROITE.");
 					return false;
 				}
 			} else if(arr.getLigne() == dpt.getLigne() && arr.getColonne() < dpt.getColonne()) { //vers la gauche
-				for(int i = dpt.getColonne(); i < arr.getColonne() ; i--) {
+				for(i = dpt.getColonne(); i < arr.getColonne() ; i--) {
 					if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
 						compteur++;
 					}
@@ -43,11 +44,11 @@
 				if(compteur == Math.abs(arr.getColonne() - dpt.getColonne() ) ) {
 					return true;
 				} else {
-					System.out.println("Il y a une pièce sur le chemin.");
+					System.out.println("Il y a une pièce sur le chemin GAUCHE.");
 					return false;
 				}
 			} else if(arr.getLigne() < dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le haut
-				for(int i = dpt.getLigne()-1; i < arr.getLigne() ; i--) {
+				for(i = dpt.getLigne()-1; i < arr.getLigne() ; i--) {
 					if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
 						compteur++;
 					}
@@ -59,7 +60,7 @@
 					return false;
 				}
 			} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le bas
-				for(int i = dpt.getLigne(); i < arr.getLigne() ; i++) {
+				for(i = dpt.getLigne(); i < arr.getLigne() ; i++) {
 					if(echec.getCase(i, dpt.getColonne()).caseOccupe() == false) {
 						compteur++;
 					}
@@ -67,7 +68,7 @@
 				if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() ) ) {
 					return true;
 				} else {
-					System.out.println("Il y a une pièce sur le chemin4.");
+					System.out.println("Il y a une pièce sur le chemin BAS.");
 					return false;
 				}
 			} else {
@@ -99,5 +100,14 @@
 			return false;
 		}*/
 	
+	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
+		
+		if (deplacementValide(echec, depart, arrive)) {
+			echec.setCase(depart.getLigne(), depart.getColonne(), new Case());
+			echec.setCase(arrive.getLigne(), arrive.getColonne(), new Case(arrive.getLigne(), arrive.getColonne(), this));
+		}
+		
+		return echec;
+	}
 	
 }
