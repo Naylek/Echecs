@@ -255,7 +255,6 @@ public class Joueur {
 		
 		while(departChoix.getPiece().deplacementValide(echec, departChoix, arriveChoix) == false)
 		{
-			System.out.println("ressaisi");
 			System.out.print("Veuillez choisir la case de destination\n"); // 2eme choix n'importe quelle case (deplacementValide de chaque piece validera)
 			arrive = memeChoix(echec, depart);
 			this.setColonneSaisie(arrive, echec);
