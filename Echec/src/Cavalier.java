@@ -59,15 +59,4 @@ public class Cavalier extends Piece {
 		}
 	} // fin deplacementValide()
 	
-	
-	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
-		
-		if (deplacementValide(echec, depart, arrive)) {
-			echec.setCase(depart.getLigne(), depart.getColonne(), new Case());
-			echec.setCase(arrive.getLigne(), arrive.getColonne(), new Case(arrive.getLigne(), arrive.getColonne(), this));
-		}
-		
-		return echec;
-	}
-	
 }

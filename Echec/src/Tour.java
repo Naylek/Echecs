@@ -34,7 +34,7 @@
 					System.out.println("Il y a une pièce sur le chemin.");
 					return false;
 				}
-			} else if(arr.getLigne() == arr.getLigne() && dpt.getColonne() < dpt.getColonne()) { //vers la gauche
+			} else if(arr.getLigne() == dpt.getLigne() && arr.getColonne() < dpt.getColonne()) { //vers la gauche
 				for(int i = dpt.getColonne(); i < arr.getColonne() ; i--) {
 					if(echec.getCase(dpt.getLigne(), i).caseOccupe() == false) {
 						compteur++;
@@ -56,7 +56,6 @@
 					return true;
 				} else {
 					System.out.println("Il y a une pièce sur le chemin HAUT.");
-					System.out.println(compteur);
 					return false;
 				}
 			} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le bas
@@ -100,14 +99,5 @@
 			return false;
 		}*/
 	
-	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
-		
-		if (deplacementValide(echec, depart, arrive)) {
-			echec.setCase(depart.getLigne(), depart.getColonne(), new Case());
-			echec.setCase(arrive.getLigne(), arrive.getColonne(), new Case(arrive.getLigne(), arrive.getColonne(), this));
-		}
-		
-		return echec;
-	}
 	
 }

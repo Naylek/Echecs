@@ -20,33 +20,38 @@ public class Roi extends Piece{
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
-		
-		
-		return false;
-	}
-	
-	/*
-	--> case arrivée vide ou pièce couleur opposée
-	--> dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()+1
-	--> dpt.getLigne() == arr.getLigne() && dpt.getColonne() == arr.getColonne()-1
-	--> dpt.getLigne() == arr.getLigne()+1 && dpt.getColonne() == arr.getColonne()
-	--> dpt.getLigne() == arr.getLigne()-1 && dpt.getColonne() == arr.getColonne()
-	--> dpt.getLigne() == arr.getLigne()+1 && dpt.getColonne() == arr.getColonne()+1
-	--> dpt.getLigne() == arr.getLigne()+1 && dpt.getColonne() == arr.getColonne()-1
-	--> dpt.getLigne() == arr.getLigne()-1 && dpt.getColonne() == arr.getColonne()+1
-	--> dpt.getLigne() == arr.getLigne()-1 && dpt.getColonne() == arr.getColonne()-1
-	--> ne passe pas par dessus sa couleur
-	--> peut bouffer un pion ennemi SI CA LE MET PAS EN ECHEC !!
-	*/
-	
-	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
-		
-		if (deplacementValide(echec, depart, arrive)) {
-			echec.setCase(depart.getLigne(), depart.getColonne(), new Case());
-			echec.setCase(arrive.getLigne(), arrive.getColonne(), new Case(arrive.getLigne(), arrive.getColonne(), this));
+		if (arr.caseOccupe() == false || arr.caseOccupe(this.couleur) == false) { // case arrivée vide ou pièce couleur opposée
+			if(arr.getLigne() == dpt.getLigne()) { // meme ligne
+				if(arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //deplacement a droite ou a gauche
+					return true;
+				} else {
+					System.out.println("Le roi ne se déplace pas aussi loin.");
+					return false;
+				}
+			} else if(arr.getLigne() == dpt.getLigne()-1) { // ligne du dessus
+				if(arr.getColonne() == dpt.getColonne() || arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //meme colonne, droite ou gauche
+					return true;
+				} else {
+					System.out.println("Le roi ne se déplace pas aussi loin.");
+					return false;
+				}
+			} else if(arr.getLigne() == dpt.getLigne()+1) { // ligne du dessous
+				if(arr.getColonne() == dpt.getColonne() || arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //meme colonne, droite ou gauche
+					return true;
+				} else {
+					System.out.println("Le roi ne se déplace pas aussi loin.");
+					return false;
+				}
+			} else {
+				System.out.println("Le roi ne se déplace pas aussi loin.");
+				return false;
+			}
+		} else {
+			System.out.println("Un copain est sur la case demandée.");
+			return false;
 		}
-		
-		return echec;
 	}
+	
+	// --> peut se déplacer/bouffer un pion ennemi SI CA LE MET PAS EN ECHEC !!
 	
 }

@@ -33,9 +33,17 @@ public abstract class Piece {
 		this.nom = nom;
 	}
 	
-	//method abstract
-	public abstract Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive);
+	public Echiquier seDeplacer(Echiquier echec, Case depart, Case arrive) {
+		
+		if (deplacementValide(echec, depart, arrive)) {
+			echec.setCase(depart.getLigne(), depart.getColonne(), new Case());
+			echec.setCase(arrive.getLigne(), arrive.getColonne(), new Case(arrive.getLigne(), arrive.getColonne(), this));
+		}
+		
+		return echec;
+	}
 	
+	//method abstract
 	public abstract boolean deplacementValide(Echiquier e, Case x, Case y);
 	
 	public String toString() {
