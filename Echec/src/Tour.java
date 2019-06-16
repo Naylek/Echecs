@@ -53,10 +53,11 @@
 							compteur++;
 						}
 					}
-					if(compteur == Math.abs((arr.getLigne() - dpt.getLigne()) ) ) {
+					if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() ) ) {
 						return true;
 					} else {
 						System.out.println("Il y a une pièce sur le chemin3.");
+						System.out.println(compteur);
 						return false;
 					}
 				} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() == dpt.getColonne()) { //vers le bas
