@@ -55,6 +55,7 @@ public class Partie {
 			}
 			else if(choix == 3)
 			{	
+				tour = true; // A ENLEVER !!
 				if(tour == true)
 				{
 					System.out.println("C'est au joueur blanc de jouer");

@@ -24,11 +24,12 @@ public class Fou extends Piece {
 		
 		if (!arr.caseOccupe() || !arr.caseOccupe(this.couleur)) { // case arrivée vide ou pièce couleur opposée
 			if(arr.getLigne() < dpt.getLigne() && arr.getColonne() > dpt.getColonne()) { // vers haut/droite
-				if(dpt.getLigne()+ dpt.getColonne() == arr.getLigne() + arr.getColonne()) { //dans la diagonale
+				if(dpt.getLigne() + dpt.getColonne() == arr.getLigne() + arr.getColonne()) { //dans la diagonale
+					j = dpt.getColonne()+1;
 					for(int i = dpt.getLigne()-1; i >=  arr.getLigne()+1; i--) {
-						j = i;
 						if(!echec.getCase(i, j).caseOccupe()) {
 							compteur++;
+							j++;
 						}
 					}
 					if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() )-1) {
@@ -43,10 +44,11 @@ public class Fou extends Piece {
 				}
 			} else if(arr.getLigne() < dpt.getLigne() && arr.getColonne() < dpt.getColonne()) { // vers haut/gauche
 				if(dpt.getLigne() - dpt.getColonne() == arr.getLigne() - arr.getColonne() ) { //dans la diagonale
+					j = dpt.getColonne()-1;
 					for(int i = dpt.getLigne()-1; i >= arr.getLigne()+1; i--) {
-						j = i;
 						if(!echec.getCase(i, j).caseOccupe()) {
 							compteur++;
+							j++;
 						}
 					}
 					if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() )-1) {
@@ -61,10 +63,11 @@ public class Fou extends Piece {
 				}
 			} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() < dpt.getColonne()) { // vers bas/gauche
 				if(dpt.getLigne() + dpt.getColonne() == arr.getLigne() + arr.getColonne() ) { //dans la diagonale
+					j = dpt.getColonne()-1;
 					for(int i = dpt.getLigne()+1; i <= arr.getLigne()-1; i++) {
-						j = i;
 						if(!echec.getCase(i, j).caseOccupe()) {
 							compteur++;
+							j++;
 						}
 					}
 					if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() )-1) {
@@ -79,10 +82,11 @@ public class Fou extends Piece {
 				}
 			} else if(arr.getLigne() > dpt.getLigne() && arr.getColonne() > dpt.getColonne()) { // vers bas/droite
 				if(dpt.getLigne() - dpt.getColonne() == arr.getLigne() - arr.getColonne() ) { //dans la diagonale
+					j = dpt.getColonne()+1;
 					for(int i = dpt.getLigne()+1; i <= arr.getLigne()-1; i++) {
-						j = i;
 						if(!echec.getCase(i, j).caseOccupe()) {
 							compteur++;
+							j++;
 						}
 					}
 					if(compteur == Math.abs(arr.getLigne() - dpt.getLigne() )-1) {
