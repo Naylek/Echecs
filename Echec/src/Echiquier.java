@@ -143,6 +143,25 @@ public class Echiquier {
 		return this.plateau;
 	}
 	
+	public Echiquier caseDanger() { // retourne l'echiquier avec les cases sous la menace d'une autre pieces marquees (EstMenace = true)
+		
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if(this.getCase(i, j).caseOccupe()) {
+					for (int k = 0; k < 8; k++) {
+						for (int l = 0; l < 8; l++) {
+							if(this.getCase(i, j).getPiece().deplacementValide(this, this.getCase(i, j), this.getCase(k, l))) {
+								this.getCase(i, j).setEstMenace(true);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		return this;
+	}
+	
 	public String toString() {
 		String s = "";
 		char l = '0';

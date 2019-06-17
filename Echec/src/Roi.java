@@ -22,29 +22,34 @@ public class Roi extends Piece{
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
 		if (arr.caseOccupe() == false || arr.caseOccupe(this.couleur) == false) { // case arrivée vide ou pièce couleur opposée
-			if(arr.getLigne() == dpt.getLigne()) { // meme ligne
-				if(arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //deplacement a droite ou a gauche
-					return true;
-				} else {
-					System.out.println("Le roi ne se déplace pas aussi loin.");
-					return false;
-				}
-			} else if(arr.getLigne() == dpt.getLigne()-1) { // ligne du dessus
-				if(arr.getColonne() == dpt.getColonne() || arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //meme colonne, droite ou gauche
-					return true;
-				} else {
-					System.out.println("Le roi ne se déplace pas aussi loin.");
-					return false;
-				}
-			} else if(arr.getLigne() == dpt.getLigne()+1) { // ligne du dessous
-				if(arr.getColonne() == dpt.getColonne() || arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //meme colonne, droite ou gauche
-					return true;
+			if(!arr.getEstMenace()) {
+				if(arr.getLigne() == dpt.getLigne()) { // meme ligne
+					if(arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //deplacement a droite ou a gauche
+						return true;
+					} else {
+						System.out.println("Le roi ne se déplace pas aussi loin.");
+						return false;
+					}
+				} else if(arr.getLigne() == dpt.getLigne()-1) { // ligne du dessus
+					if(arr.getColonne() == dpt.getColonne() || arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //meme colonne, droite ou gauche
+						return true;
+					} else {
+						System.out.println("Le roi ne se déplace pas aussi loin.");
+						return false;
+					}
+				} else if(arr.getLigne() == dpt.getLigne()+1) { // ligne du dessous
+					if(arr.getColonne() == dpt.getColonne() || arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //meme colonne, droite ou gauche
+						return true;
+					} else {
+						System.out.println("Le roi ne se déplace pas aussi loin.");
+						return false;
+					}
 				} else {
 					System.out.println("Le roi ne se déplace pas aussi loin.");
 					return false;
 				}
 			} else {
-				System.out.println("Le roi ne se déplace pas aussi loin.");
+				System.out.println("Le roi serait en echec, fais attention bouleto !");
 				return false;
 			}
 		} else {

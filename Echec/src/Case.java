@@ -51,6 +51,14 @@ public class Case {
 		this.piece = piece;
 	}
 	
+	public boolean getEstMenace() {
+		return this.estMenace;
+	}
+	
+	public void setEstMenace(boolean menace) {
+		this.estMenace = menace;
+	}
+	
 	public boolean caseOccupe()
 	{
 		return (this.piece != null);
@@ -63,25 +71,6 @@ public class Case {
 			return false;
 		}
 		else return (this.piece.couleur == couleur);
-	}
-	
-	public Echiquier caseDanger(Echiquier echec) { // retourne l'echiquier avec les cases sous la menace d'une autre pieces marquees (EstMenace = true)
-		
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
-				if(echec.getCase(i, j).caseOccupe()) {
-					for (int k = 0; k < 8; k++) {
-						for (int l = 0; l < 8; l++) {
-							if(echec.getCase(i, j).getPiece().deplacementValide(echec, echec.getCase(i, j), echec.getCase(k, l))) {
-								echec.getCase(i, j).estMenace = true;
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		return echec;
 	}
 	
 	public String toString() {
