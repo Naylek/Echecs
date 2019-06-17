@@ -17,12 +17,11 @@ public class Reine extends Piece{
 	
 	public boolean deplacementValide(Echiquier echec, Case depart, Case arrive) {
 		
-		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
-		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
-		
-		
-		
-		return false;
+		if(this.deplacementValideFou(echec, depart, arrive) || this.deplacementValideTour(echec, depart, arrive)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 }
