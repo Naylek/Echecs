@@ -19,11 +19,12 @@ public class Partie {
 		int choix;
 		boolean tour = true;
 		int i = 0;
+		Scanner sc = new Scanner(System.in);
 		while(i < 10)//pas echec et mat joueur 1 || pas echec et mat joueur 2)
 		{
 			System.out.println(plateau);
 			System.out.println("Vous voulez : 1 -> sauvegarder ? | 2 -> restaurer une partie ?  | 3 -> jouer ? | 4 -> arrêter la partie ?");
-			Scanner sc = new Scanner(System.in);
+			
 			choix = sc.nextInt();
 			while(saisieControle(choix) == false)//saisie controlé
 			{
@@ -70,7 +71,13 @@ public class Partie {
 			{
 				break;
 			}
-			tour = false; //pour changer le tour
+			if(tour == true)//pour changer le tour
+			{
+				tour = false; 
+			}
+			else tour = true;
+			
+			
 		}
 //		if()//si J1 est en echec et mat J2 a gagné 
 //		{
