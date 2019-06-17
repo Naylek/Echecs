@@ -1,5 +1,6 @@
 public class Roi extends Piece{
 	
+	
 	public Roi() {
 	}
 	
@@ -51,7 +52,5 @@ public class Roi extends Piece{
 			return false;
 		}
 	}
-	
-	// --> peut se déplacer/bouffer un pion ennemi SI CA LE MET PAS EN ECHEC !!
 	
 }

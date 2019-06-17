@@ -2,11 +2,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Echiquier {
 	
 	private Case[][] plateau;
+	private ArrayList<Piece> listeEnnemi;
 
 	public Echiquier() {
 		this.plateau = new Case[8][8];
@@ -168,6 +170,20 @@ public class Echiquier {
 			}
 		}
 		return s;		
+	}
+	
+	// Kelyan
+	public ArrayList<Piece> pritPour(Piece victime) {
+		if(victime.getCouleur()) {
+			for(int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if(!this.getCase(i, j).caseOccupe(victime.couleur)) {
+						this.listeEnnemi.add(this.getCase(i, j).getPiece());
+					}
+				}
+			}
+		}
+		return listeEnnemi;
 	}
 
 }
