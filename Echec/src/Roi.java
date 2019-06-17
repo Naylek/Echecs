@@ -22,7 +22,7 @@ public class Roi extends Piece{
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
 		
 		if (arr.caseOccupe() == false || arr.caseOccupe(this.couleur) == false) { // case arrivée vide ou pièce couleur opposée
-			if(!arr.getEstMenace()) {
+			//if(!arr.getEstMenace()) {
 				if(arr.getLigne() == dpt.getLigne()) { // meme ligne
 					if(arr.getColonne() == dpt.getColonne()+1 || arr.getColonne() == dpt.getColonne()-1) { //deplacement a droite ou a gauche
 						return true;
@@ -48,10 +48,10 @@ public class Roi extends Piece{
 					System.out.println("Le roi ne se déplace pas aussi loin.");
 					return false;
 				}
-			} else {
-				System.out.println("Le roi serait en echec, fais attention bouleto !");
-				return false;
-			}
+//			} else {
+//				System.out.println("Le roi serait en echec, fais attention bouleto !");
+//				return false;
+//			}
 		} else {
 			System.out.println("Un copain est sur la case demandée.");
 			return false;

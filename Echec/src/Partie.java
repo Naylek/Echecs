@@ -56,7 +56,7 @@ public class Partie {
 			}
 			else if(choix == 3)
 			{	
-				plateau.caseDanger(); //mise a jour echiquier pour savoir quel piece peut se deplacer où
+				//plateau.caseDanger(); //mise a jour echiquier pour savoir quel piece peut se deplacer où
 				if(tour == true)
 				{
 					System.out.println("C'est au joueur blanc de jouer");

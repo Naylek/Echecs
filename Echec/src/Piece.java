@@ -44,7 +44,7 @@ public abstract class Piece {
 	}
 	
 	
-	public boolean deplacementValideTour(Echiquier echec, Case depart, Case arrive) {
+	public boolean deplacementValideTour(Echiquier echec, Case depart, Case arrive) {4
 		
 		Case dpt = echec.getCase(depart.getLigne(), depart.getColonne());
 		Case arr = echec.getCase(arrive.getLigne(), arrive.getColonne());
