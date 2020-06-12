@@ -72,6 +72,8 @@
           <tags>persp.newWizSC:org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard</tags>
           <tags>persp.actionSet:org.eclipse.jdt.junit.JUnitActionSet</tags>
           <tags>persp.viewSC:org.eclipse.ant.ui.views.AntView</tags>
+          <tags>persp.actionSet:com.objectaid.uml.addon.cls.display</tags>
+          <tags>persp.actionSet:com.objectaid.uml.addon.cls.alignment</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_-6eE0WtWEemGR-N1gisALQ" selectedElement="_-6eE0mtWEemGR-N1gisALQ" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_-6eE0mtWEemGR-N1gisALQ" containerData="2500" selectedElement="_-6eE02tWEemGR-N1gisALQ">
               <children xsi:type="basic:PartStack" xmi:id="_-6eE02tWEemGR-N1gisALQ" elementId="left" containerData="6000" selectedElement="_-6eE1GtWEemGR-N1gisALQ">
@@ -287,11 +289,17 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-wMHcGtWEemGR-N1gisALQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_vJCyYG6WEemI5-oPNiLdNw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_-eLKZ2tWEemGR-N1gisALQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_gc_xsHtFEeqzHefqBMi2Ug" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_-eLKZ2tWEemGR-N1gisALQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-wMHcWtWEemGR-N1gisALQ" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
         <children xsi:type="menu:ToolBarSeparator" xmi:id="_-wMHcmtWEemGR-N1gisALQ" elementId="additions" toBeRendered="false"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_g4UbwHtFEeqzHefqBMi2Ug" elementId="com.objectaid.uml.addon.cls.alignment">
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_g6MrEHtFEeqzHefqBMi2Ug" elementId="com.objectaid.uml.addon.cls.display">
+        <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="__GRFIGtWEemGR-N1gisALQ" elementId="org.eclipse.debug.ui.launchActionSet">
         <tags>Draggable</tags>
@@ -308,7 +316,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-wMHdWtWEemGR-N1gisALQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_vJFOpG6WEemI5-oPNiLdNw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_-eJ8aWtWEemGR-N1gisALQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_gdDcEHtFEeqzHefqBMi2Ug" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_-eJ8aWtWEemGR-N1gisALQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_-wMHdmtWEemGR-N1gisALQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -600,6 +608,8 @@
     <bindings xmi:id="_-esHy2tWEemGR-N1gisALQ" keySequence="CTRL+F9" command="_-eJVPWtWEemGR-N1gisALQ"/>
     <bindings xmi:id="_-esHz2tWEemGR-N1gisALQ" keySequence="CTRL+F11" command="_-eLKnWtWEemGR-N1gisALQ"/>
     <bindings xmi:id="_-esH0GtWEemGR-N1gisALQ" keySequence="CTRL+F12" command="_-eIuUmtWEemGR-N1gisALQ"/>
+    <bindings xmi:id="_fSwzMHtFEeqzHefqBMi2Ug" keySequence="ALT+SHIFT+G" command="_fR5QiHtFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fSzPcHtFEeqzHefqBMi2Ug" keySequence="ALT+CTRL+SHIFT+F" command="_fR4peHtFEeqzHefqBMi2Ug"/>
   </bindingTables>
   <bindingTables xmi:id="_-ekL-GtWEemGR-N1gisALQ" elementId="org.eclipse.ant.ui.AntEditorScope" bindingContext="_-ePb42tWEemGR-N1gisALQ">
     <bindings xmi:id="_-ekL-WtWEemGR-N1gisALQ" keySequence="F3" command="_-eG5CGtWEemGR-N1gisALQ"/>
@@ -761,6 +771,39 @@
   <bindingTables xmi:id="_-6TFtGtWEemGR-N1gisALQ" bindingContext="_-6TFs2tWEemGR-N1gisALQ"/>
   <bindingTables xmi:id="_-6TFtmtWEemGR-N1gisALQ" bindingContext="_-6TFtWtWEemGR-N1gisALQ"/>
   <bindingTables xmi:id="_-6TFuGtWEemGR-N1gisALQ" bindingContext="_-6TFt2tWEemGR-N1gisALQ"/>
+  <bindingTables xmi:id="_fSkl8HtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.diagramContext" bindingContext="_fR8T03tFEeqzHefqBMi2Ug">
+    <bindings xmi:id="_fSqskHtFEeqzHefqBMi2Ug" keySequence="F5" command="_fR4pgHtFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fSr6sHtFEeqzHefqBMi2Ug" keySequence="CTRL+SHIFT+-" command="_fR4pcHtFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fSshwHtFEeqzHefqBMi2Ug" keySequence="CTRL+H" command="_fR4pdHtFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fStI0HtFEeqzHefqBMi2Ug" keySequence="CTRL+L" command="_fR5QgHtFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fStI0XtFEeqzHefqBMi2Ug" keySequence="CTRL+O" command="_fR5Qk3tFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fSxaQHtFEeqzHefqBMi2Ug" keySequence="CTRL+SHIFT+L" command="_fR5QjXtFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fSyBVHtFEeqzHefqBMi2Ug" keySequence="CTRL+SHIFT+D" command="_fR5QkHtFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fSyoYHtFEeqzHefqBMi2Ug" keySequence="ESC" command="_fR4pc3tFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fSyoYXtFEeqzHefqBMi2Ug" keySequence="CTRL+R" command="_fR5QjntFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fS1rsHtFEeqzHefqBMi2Ug" keySequence="CTRL+HOME" command="_fR4pf3tFEeqzHefqBMi2Ug"/>
+  </bindingTables>
+  <bindingTables xmi:id="_fSqskXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.table.ui.EditorID.tableContext" bindingContext="_fR8T1XtFEeqzHefqBMi2Ug">
+    <bindings xmi:id="_fSqskntFEeqzHefqBMi2Ug" keySequence="F5" command="_fR4peXtFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fStI1HtFEeqzHefqBMi2Ug" keySequence="CTRL+O" command="_fR4pd3tFEeqzHefqBMi2Ug"/>
+  </bindingTables>
+  <bindingTables xmi:id="_fSqsk3tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.tree.ui.EditorID.treeContext" bindingContext="_fR8T1HtFEeqzHefqBMi2Ug">
+    <bindings xmi:id="_fSqslHtFEeqzHefqBMi2Ug" keySequence="F5" command="_fR5QlntFEeqzHefqBMi2Ug"/>
+    <bindings xmi:id="_fStI1XtFEeqzHefqBMi2Ug" keySequence="CTRL+O" command="_fR5Qh3tFEeqzHefqBMi2Ug"/>
+  </bindingTables>
+  <bindingTables xmi:id="_fStI0ntFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.editor.siriusEditorContext" bindingContext="_fR8T0XtFEeqzHefqBMi2Ug">
+    <bindings xmi:id="_fStI03tFEeqzHefqBMi2Ug" keySequence="CTRL+O" command="_fR4pfHtFEeqzHefqBMi2Ug"/>
+  </bindingTables>
+  <bindingTables xmi:id="_fSyBUHtFEeqzHefqBMi2Ug" elementId="org.eclipse.acceleo.ui.interpreter.interpreterview" bindingContext="_fR8T0HtFEeqzHefqBMi2Ug">
+    <bindings xmi:id="_fSyBUXtFEeqzHefqBMi2Ug" keySequence="CTRL+SHIFT+D" command="_fR5QlXtFEeqzHefqBMi2Ug"/>
+  </bindingTables>
+  <bindingTables xmi:id="_fSyBUntFEeqzHefqBMi2Ug" elementId="org.eclipse.gmf.runtime.diagram.ui.diagramContext" bindingContext="_fR8T0ntFEeqzHefqBMi2Ug">
+    <bindings xmi:id="_fSyBU3tFEeqzHefqBMi2Ug" keySequence="CTRL+SHIFT+D" command="_fR5Qi3tFEeqzHefqBMi2Ug"/>
+  </bindingTables>
+  <bindingTables xmi:id="_gNhLQXtFEeqzHefqBMi2Ug" bindingContext="_gNhLQHtFEeqzHefqBMi2Ug"/>
+  <bindingTables xmi:id="_gNhyUXtFEeqzHefqBMi2Ug" bindingContext="_gNhyUHtFEeqzHefqBMi2Ug"/>
+  <bindingTables xmi:id="_gNhyU3tFEeqzHefqBMi2Ug" bindingContext="_gNhyUntFEeqzHefqBMi2Ug"/>
+  <bindingTables xmi:id="_gNiZYXtFEeqzHefqBMi2Ug" bindingContext="_gNiZYHtFEeqzHefqBMi2Ug"/>
   <rootContext xmi:id="_-dvslGtWEemGR-N1gisALQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_-dvslWtWEemGR-N1gisALQ" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.platform" name="In Windows" description="A window is open">
       <children xmi:id="_-dvslmtWEemGR-N1gisALQ" elementId="org.eclipse.e4.ui.contexts.views" contributorURI="platform:/plugin/org.eclipse.platform" name="%bindingcontext.name.bindingView"/>
@@ -803,8 +846,15 @@
       <children xmi:id="_-ePb1GtWEemGR-N1gisALQ" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" name="In Tasks View"/>
       <children xmi:id="_-ePb4GtWEemGR-N1gisALQ" elementId="org.eclipse.buildship.ui.contexts.taskview" name="In Gradle Tasks View" description="This context is activated when the Gradle Tasks view is in focus"/>
       <children xmi:id="_-ePb6mtWEemGR-N1gisALQ" elementId="org.eclipse.egit.ui.RepositoriesView" name="In Git Repositories View"/>
+      <children xmi:id="_fR8T0XtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.editor.siriusEditorContext" name="SiriusEditor Context"/>
+      <children xmi:id="_fR8T0ntFEeqzHefqBMi2Ug" elementId="org.eclipse.gmf.runtime.diagram.ui.diagramContext" name="Diagram Editing" description="GMF Diagram Editing">
+        <children xmi:id="_fR8T03tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.diagramContext" name="In Sirius Diagram Editor" description="Sirius Diagram Editing"/>
+      </children>
+      <children xmi:id="_fR8T1HtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.tree.ui.EditorID.treeContext" name="DTree Editing" description="Sirius DTree Editing"/>
+      <children xmi:id="_fR8T1XtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.table.ui.EditorID.tableContext" name="DTable Editing" description="Sirius DTable Editing"/>
     </children>
     <children xmi:id="_-dvsl2tWEemGR-N1gisALQ" elementId="org.eclipse.ui.contexts.dialog" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs" description="A dialog is open"/>
+    <children xmi:id="_fR8T0HtFEeqzHefqBMi2Ug" elementId="org.eclipse.acceleo.ui.interpreter.interpreterview" name="Acceleo Interpreter View"/>
   </rootContext>
   <rootContext xmi:id="_-eO0wGtWEemGR-N1gisALQ" elementId="org.eclipse.wst.xsd.ui.editor.designView" name="XSD Editor Design View" description="XSD Editor Design View"/>
   <rootContext xmi:id="_-eO0w2tWEemGR-N1gisALQ" elementId="org.eclipse.ui.contexts.actionSet" name="Action Set" description="Parent context for action sets"/>
@@ -846,6 +896,10 @@
   <rootContext xmi:id="_-6TFs2tWEemGR-N1gisALQ" elementId="org.eclipse.ui.WorkingSetActionSet" name="Auto::org.eclipse.ui.WorkingSetActionSet"/>
   <rootContext xmi:id="_-6TFtWtWEemGR-N1gisALQ" elementId="org.eclipse.ui.actionSet.openFiles" name="Auto::org.eclipse.ui.actionSet.openFiles"/>
   <rootContext xmi:id="_-6TFt2tWEemGR-N1gisALQ" elementId="org.eclipse.ui.edit.text.actionSet.presentation" name="Auto::org.eclipse.ui.edit.text.actionSet.presentation"/>
+  <rootContext xmi:id="_gNhLQHtFEeqzHefqBMi2Ug" elementId="org.eclipse.gmf.runtime.diagram.ui.DiagramActionSet" name="Auto::org.eclipse.gmf.runtime.diagram.ui.DiagramActionSet"/>
+  <rootContext xmi:id="_gNhyUHtFEeqzHefqBMi2Ug" elementId="com.objectaid.uml.addon.cls.display" name="Auto::com.objectaid.uml.addon.cls.display"/>
+  <rootContext xmi:id="_gNhyUntFEeqzHefqBMi2Ug" elementId="com.objectaid.uml.addon.cls.alignment" name="Auto::com.objectaid.uml.addon.cls.alignment"/>
+  <rootContext xmi:id="_gNiZYHtFEeqzHefqBMi2Ug" elementId="com.objectaid.uml.cls.global" name="Auto::com.objectaid.uml.cls.global"/>
   <descriptors xmi:id="_-grr0GtWEemGR-N1gisALQ" elementId="org.eclipse.e4.ui.compatibility.editor" allowMultiple="true" category="org.eclipse.e4.primaryDataStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor">
     <tags>Editor</tags>
   </descriptors>
@@ -1226,6 +1280,60 @@
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.wst.xml.ui"/>
     <tags>View</tags>
     <tags>categoryTag:XML</tags>
+  </descriptors>
+  <descriptors xmi:id="_fhyGoHtFEeqzHefqBMi2Ug" elementId="net.sourceforge.plantuml.eclipse.views.PlantUmlView" label="PlantUML" iconURI="platform:/plugin/net.sourceforge.plantuml.eclipse/icons/p5.gif" tooltip="" allowMultiple="true" category="PlantUml" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="net.sourceforge.plantuml.eclipse.views.PlantUmlView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="net.sourceforge.plantuml.eclipse"/>
+    <tags>View</tags>
+    <tags>categoryTag:PlantUml</tags>
+  </descriptors>
+  <descriptors xmi:id="_fiDMYHtFEeqzHefqBMi2Ug" elementId="net.sourceforge.plantuml.eclipse.views.DiagramSourceView" label="PlantUML Source" iconURI="platform:/plugin/net.sourceforge.plantuml.eclipse/icons/p5.gif" tooltip="" allowMultiple="true" category="PlantUml" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="net.sourceforge.plantuml.eclipse.views.DiagramSourceView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="net.sourceforge.plantuml.eclipse"/>
+    <tags>View</tags>
+    <tags>categoryTag:PlantUml</tags>
+  </descriptors>
+  <descriptors xmi:id="_fiDzcHtFEeqzHefqBMi2Ug" elementId="net.sourceforge.plantuml.jdt.ui.JdtPlantUmlView" label="PlantUML Project Class Diagram" iconURI="platform:/plugin/net.sourceforge.plantuml.eclipse/icons/p5.gif" tooltip="" category="PlantUml" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="net.sourceforge.plantuml.jdt.ui.JdtPlantUmlView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="net.sourceforge.plantuml.jdt"/>
+    <tags>View</tags>
+    <tags>categoryTag:PlantUml</tags>
+  </descriptors>
+  <descriptors xmi:id="_fiEagHtFEeqzHefqBMi2Ug" elementId="org.eclipse.acceleo.ui.interpreter.view" label="Interpreter" iconURI="platform:/plugin/org.eclipse.acceleo.ui.interpreter/icons/view_icon.gif" tooltip="The Interpreter view will allow users to enter expressions according to any syntax and see the result of their evaluation against a given model element." category="Other" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.acceleo.ui.interpreter.view.InterpreterView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.acceleo.ui.interpreter"/>
+    <tags>View</tags>
+    <tags>categoryTag:Other</tags>
+  </descriptors>
+  <descriptors xmi:id="_fiQnwHtFEeqzHefqBMi2Ug" elementId="org.eclipse.emf.ecoretools.internal.views.EClassHierarchyView" label="EClass Information" iconURI="platform:/plugin/org.eclipse.emf.ecoretools.ui/icons/eview16/eclass_hi_nav.gif" tooltip="" category="Ecore Tools" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.emf.ecoretools.ui.views.EClassHierarchyView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.emf.ecoretools.ui"/>
+    <tags>View</tags>
+    <tags>categoryTag:Ecore Tools</tags>
+  </descriptors>
+  <descriptors xmi:id="_fihtgHtFEeqzHefqBMi2Ug" elementId="org.eclipse.emf.ecoretools.internal.views.EReferencesView" label="References" iconURI="platform:/plugin/org.eclipse.emf.ecoretools.ui/icons/eview16/eref_nav.gif" tooltip="" category="Ecore Tools" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.emf.ecoretools.ui.views.EReferencesView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.emf.ecoretools.ui"/>
+    <tags>View</tags>
+    <tags>categoryTag:Ecore Tools</tags>
+  </descriptors>
+  <descriptors xmi:id="_fiiUkHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.common.ui.view.timeProfiler" label="Time Profiler" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="Sirius Profiler" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.sirius.common.ui.tools.api.profiler.view.TimeProfilerView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.sirius.common.ui.ext"/>
+    <tags>View</tags>
+    <tags>categoryTag:Sirius Profiler</tags>
+  </descriptors>
+  <descriptors xmi:id="_fii7oHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.ui.tools.views.model.explorer" label="Model Explorer" iconURI="platform:/plugin/org.eclipse.sirius.ui.ext/icons/full/others/ModelExplorer.gif" tooltip="" category="Sirius" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.sirius.ui.tools.internal.views.modelexplorer.ModelExplorerView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.sirius.ui.ext"/>
+    <tags>View</tags>
+    <tags>categoryTag:Sirius</tags>
+  </descriptors>
+  <descriptors xmi:id="_fjR7cHtFEeqzHefqBMi2Ug" elementId="diagramTable" label="Diagrams" iconURI="platform:/plugin/com.objectaid.uml.addon/icons/class-diagram.gif" tooltip="" category="ObjectAid" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="com.objectaid.uml.addon.diagrams.DiagramTableView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="com.objectaid.uml.addon"/>
+    <tags>View</tags>
+    <tags>categoryTag:ObjectAid</tags>
   </descriptors>
   <menuContributions xmi:id="_-dvsmGtWEemGR-N1gisALQ" elementId="org.eclipse.ui.window.customizePerspective" contributorURI="platform:/plugin/org.eclipse.platform" positionInParent="popup:toolbar">
     <children xsi:type="menu:HandledMenuItem" xmi:id="_-dvsmWtWEemGR-N1gisALQ" elementId="org.eclipse.ui.window.customizePerspective" contributorURI="platform:/plugin/org.eclipse.platform" label="%command.name.customize" command="_-dvsmmtWEemGR-N1gisALQ"/>
@@ -2234,6 +2342,70 @@
   <commands xmi:id="_-unaJ2tWEemGR-N1gisALQ" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.tasks.ui.open.repositories.view" commandName="Show Task Repositories View" description="Show Task Repositories View" category="_-eFq3mtWEemGR-N1gisALQ"/>
   <commands xmi:id="_-unaKGtWEemGR-N1gisALQ" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.doc.legend.show.action" commandName="Show UI Legend" description="Show Tasks UI Legend" category="_-eFq3mtWEemGR-N1gisALQ"/>
   <commands xmi:id="_-unaKWtWEemGR-N1gisALQ" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.context.ui.actions.tasklist.focus" commandName="Focus on Workweek" description="Focus on Workweek" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pcHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.removeBendpoints" commandName="Remove Bend-points" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pcXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.unpinElementsCommand" commandName="Unpin elements" description="Mark diagram elements as unpinned" category="_fR4CY3tFEeqzHefqBMi2Ug"/>
+  <commands xmi:id="_fR4pcntFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.updateDiagram" commandName="Update Sirius diagram" description="Perform Sirius diagram update" category="_-eFDwmtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pc3tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.deselectAll" commandName="Deselect all" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pdHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.hideElement" commandName="Hide element" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pdXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.ui.tools.internal.actions.nature.addRemoveNatureCommand" commandName="Create a Modeling project" category="_-eFD0GtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pdntFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.revealElements" commandName="Reveal hidden elements" description="Reveal all the elements" category="_-eFDwmtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pd3tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.table.ui.quickoutline" commandName="Table Editor Quick Outline Command" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4peHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.find.binding.FindElementAction" commandName="Find Element" description="Find in model" category="_fR4CYntFEeqzHefqBMi2Ug"/>
+  <commands xmi:id="_fR4peXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.table.ui.command.refreshElement" commandName="Refresh element" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pentFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.editor.reloadVSMCommand" commandName="Reload installed VSMs" category="_-eFDwWtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pe3tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.ui.tools.uncontrolCommand" commandName="Uncontrol" category="_fR4CY3tFEeqzHefqBMi2Ug"/>
+  <commands xmi:id="_fR4pfHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.editor.command.show.outline" commandName="VSM Quick outline" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pfXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.hideLabel" commandName="Hide label" description="Hide the label of the element" category="_-eFDwmtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pfntFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.refreshSirius" commandName="Refresh" description="Refresh the element" category="_-eFDwmtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pf3tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.resetOrigin" commandName="Reset Origin" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR4pgHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.refreshElement" commandName="Refresh" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QgHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.hideLabel" commandName="Hide label" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QgXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.ui.tools.controlCommand" commandName="Control" category="_fR4CY3tFEeqzHefqBMi2Ug"/>
+  <commands xmi:id="_fR5QgntFEeqzHefqBMi2Ug" elementId="org.eclipse.emf.ecoretools.ui.EClassInformationViewCommand" commandName="Show EClass information" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5Qg3tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.validateDiagram" commandName="Validate Diagram" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QhHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.synchronizedDiagram" commandName="Synchronized Diagram" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QhXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.launchRules" commandName="Launch Rules" description="Launch all rules" category="_-eFDwmtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QhntFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.table.ui.exportToCsv" commandName="Export to CSV" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5Qh3tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.tree.ui.quickoutline" commandName="Tree Editor Quick Outline Command" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QiHtFEeqzHefqBMi2Ug" elementId="org.eclipse.emf.codegen.ecore.ui.Generate" commandName="Generate Code" description="Generate code for the EMF models in the workspace" category="_fR4CYXtFEeqzHefqBMi2Ug"/>
+  <commands xmi:id="_fR5QiXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.ui.closeSessionCommand" commandName="Close Session" category="_-eFD0GtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QintFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.hideElement" commandName="Hide element" description="Hide the element" category="_-eFDwmtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5Qi3tFEeqzHefqBMi2Ug" elementId="org.eclipse.gmf.runtime.diagram.ui.providers.duplicateNode" commandName="Duplicate" description="Duplicates the selection." category="_-eFDwmtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QjHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.pinElementsCommand" commandName="Pin elements" description="Mark diagram elements as pinned" category="_fR4CY3tFEeqzHefqBMi2Ug"/>
+  <commands xmi:id="_fR5QjXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.showLabel" commandName="Show label" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QjntFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.revealAllElements" commandName="Reveal all elements" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5Qj3tFEeqzHefqBMi2Ug" elementId="org.eclipse.emf.ecoretools.ui.EClassReferencesViewCommand" commandName="Show References" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QkHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.deleteFromDiagram" commandName="Delete From Diagram" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QkXtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.ui.splitrepresentations.command" commandName="Update Representations Location" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QkntFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.revealLabel" commandName="Show label" description="Show the label of the element" category="_-eFDwmtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5Qk3tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.command.show.outline" commandName="Quick outline" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QlHtFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.diagram.ui.setLinkNoteTarget" commandName="Set target representation ..." category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QlXtFEeqzHefqBMi2Ug" elementId="org.eclipse.acceleo.ui.interpreter.evaluateaction" commandName="Evaluate" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_fR5QlntFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.tree.ui.command.refreshElement" commandName="Refresh element" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMoacHtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-static-attributes" commandName="Show Static Attributes" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMpBgHtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-private-attributes" commandName="Show Private Attributes" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMpBgXtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-package-attributes" commandName="Show Package Attributes" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMpokHtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-protected-attributes" commandName="Show Protected Attributes" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMpokXtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-public-attributes" commandName="Show Public Attributes" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMqPoHtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-property-accessors" commandName="Show Property Accessors" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMqPoXtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-static-operations" commandName="Show Static Operations" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMqPontFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-private-operations" commandName="Show Private Operations" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMqPo3tFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-package-operations" commandName="Show Package Operations" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMq2sHtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-protected-operations" commandName="Show Protected Operations" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMq2sXtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.display/show-public-operations" commandName="Show Public Operations" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMq2sntFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.alignment/com.objectaid.uml.align.BOTTOM" commandName="Bottom" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMrdwHtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.alignment/com.objectaid.uml.align.MIDDLE" commandName="Middle" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMrdwXtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.alignment/com.objectaid.uml.align.TOP" commandName="Top" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMsE0HtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.alignment/com.objectaid.uml.align.RIGHT" commandName="Right" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMsr4HtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.alignment/com.objectaid.uml.align.CENTER" commandName="Center" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMsr4XtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::com.objectaid.uml.addon.cls.alignment/com.objectaid.uml.align.LEFT" commandName="Left" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMt6AHtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::org.eclipse.emf.importer.genModelEditorContribution/org.eclipse.emf.importer.ui.GenModelReloadActionDelegate.Editor" commandName="Reload..." category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMuhEHtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::org.eclipse.sirius.table.ui.editionTableEditorID.actions/org.eclipse.sirius.table.ui.refresh" commandName="Refresh" description="Force a refresh of the table" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMuhEXtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::org.eclipse.sirius.table.ui.crossTableEditorID.actions/org.eclipse.sirius.table.ui.refresh" commandName="Refresh" description="Force a refresh of the table" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMuhEntFEeqzHefqBMi2Ug" elementId="AUTOGEN:::org.eclipse.sirius.tree.ui.EditorID.actions/org.eclipse.sirius.tree.ui.refresh" commandName="Refresh" description="Force a refresh of the tree" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMw9UHtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::org.eclipse.acceleo.ui.interpreter.debug.VariableViewActions/org.eclipse.acceleo.ui.interpreter.debug.AddVariablesToInterpreterAction" commandName="Adds variables." description="Add the selected variables in the interpreter." category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMw9UXtFEeqzHefqBMi2Ug" elementId="AUTOGEN:::diagramHandles/save.diagram.image" commandName="Save Automatic Image(s)" description="Save Automatic Image(s)" category="_-eFq3mtWEemGR-N1gisALQ"/>
+  <commands xmi:id="_gMw9UntFEeqzHefqBMi2Ug" elementId="AUTOGEN:::diagramHandles/update.diagram.timestamp" commandName="Update Timestamp(s)" description="Update Timestamp(s)" category="_-eFq3mtWEemGR-N1gisALQ"/>
   <addons xmi:id="_-dvsm2tWEemGR-N1gisALQ" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_-dvsnGtWEemGR-N1gisALQ" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_-dvsnWtWEemGR-N1gisALQ" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -2245,7 +2417,7 @@
   <addons xmi:id="_-dvso2tWEemGR-N1gisALQ" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_-dvspGtWEemGR-N1gisALQ" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_-d0lEGtWEemGR-N1gisALQ" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_sz0ncW6WEemI5-oPNiLdNw" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_-eFDwGtWEemGR-N1gisALQ" elementId="org.eclipse.team.ui.category.team" name="Team" description="Actions that apply when working with a Team"/>
   <categories xmi:id="_-eFDwWtWEemGR-N1gisALQ" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>
@@ -2282,4 +2454,7 @@
   <categories xmi:id="_-eFq3WtWEemGR-N1gisALQ" elementId="org.eclipse.oomph.commands" name="Oomph"/>
   <categories xmi:id="_-eFq3mtWEemGR-N1gisALQ" elementId="org.eclipse.core.commands.categories.autogenerated" name="Uncategorized" description="Commands that were either auto-generated or have no category"/>
   <categories xmi:id="_DbsAQOIjEeWDJvu3hU0AuQ" elementId="org.eclipse.recommenders.news.rcp.category.news" contributorURI="platform:/plugin/org.eclipse.recommenders.news.rcp" name="%category.name.news" description="%category.description.news"/>
+  <categories xmi:id="_fR4CYXtFEeqzHefqBMi2Ug" elementId="org.eclipse.emf.codegen.ecore.ui.Commands" name="EMF Code Generation" description="Commands for the EMF code generation tools"/>
+  <categories xmi:id="_fR4CYntFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.common.ui.category" name="Sirius"/>
+  <categories xmi:id="_fR4CY3tFEeqzHefqBMi2Ug" elementId="org.eclipse.sirius.ui.tools.commands" name="Sirius Commands"/>
 </application:Application>
